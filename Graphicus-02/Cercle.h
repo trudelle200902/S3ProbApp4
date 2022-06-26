@@ -6,7 +6,7 @@
 
 class cercle:public forme
 {
-private:
+protected:
 	rayon;
 public:
 	Cercle(int r=1);

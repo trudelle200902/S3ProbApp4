@@ -6,8 +6,8 @@
 #
 all: graphicus-02 clean
 
-graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o vecteur.o
-	g++ -o graphicus-02 graphicus-02.o tests.o canevas.o couche.o forme.o vecteur.o
+graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o Vecteur.o
+	g++ -o graphicus-02 graphicus-02.o tests.o canevas.o couche.o forme.o Vecteur.o
 
 graphicus-02.o: graphicus-02.cpp canevas.h couche.h forme.h
 	g++ -c graphicus-02.cpp
@@ -24,8 +24,8 @@ couche.o: couche.cpp couche.h forme.h
 forme.o: forme.cpp forme.h
 	g++ -c forme.cpp
 	
-vecteur.o: vecteur.cpp vecteur.h forme.h
-	g++ vecteur.cpp -g -c
+Vecteur.o: Vecteur.cpp Vecteur.h forme.h
+	g++ Vecteur.cpp -g -c
 
 clean:
 	rm  -f *.o

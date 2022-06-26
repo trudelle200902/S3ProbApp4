@@ -1,4 +1,4 @@
-#include "vecteur.h"
+#include "Vecteur.h"
 #include "forme.h"
 
 #include <iostream>
@@ -14,9 +14,12 @@ Vecteur<Type>::~Vecteur()
 {
 	if (tab != NULL)
 	{
-		std::cout << "destruc 1" << std::endl;
+		for(int i =0; i<size;i++)
+		{
+			tab[i] = nullptr;
+			delete tab[i];
+		}
 		delete [] tab;
-		std::cout << "destruc 2" << std::endl;
 	}
 }
 
@@ -25,58 +28,65 @@ bool Vecteur<Type>::insert(Type* newEllement)
 {
 	if(size >= capacity)
 	{
-		Type** temp = new Type*[2*capacity];
-		for(int i =0; i<size; i++)
-		{
-			temp[i] = tab[i];
-		}
-		delete [] tab;//
-		tab = temp;
-		capacity*=2;
+		doubleCapaciter();
 	}
-	std::cout << "1" << std::endl;
-	
-	//delete [] tab;
-	std::cout << "2" << std::endl;
+
 	tab[size] = newEllement;
 	size++;
 	return false;
 }
 
 template <typename Type>
-void Vecteur<Type>::getSize() const
+int Vecteur<Type>::getSize() const
 {
-	
+	return size;
 }
 
 template <typename Type>
-void Vecteur<Type>::getCapacity() const
+int Vecteur<Type>::getCapacity() const
 {
-	
+	return capacity;
 }
 
 template <typename Type>
 void Vecteur<Type>::clear()
 {
-	
+	for(int i =0; i<size;i++)
+	{
+		tab[i] = nullptr;
+		delete tab[i];
+	}
 }
 
 template <typename Type>
-void Vecteur<Type>::remove(int index)
+Type* Vecteur<Type>::remove(int index)
 {
-	
+	if (size <= index)
+	{
+		return nullptr;
+	}
+	Type* out = tab[index];
+	for(int i=index; i<size-1; i++)
+	{
+		tab[i] = tab[i+1];
+	}
+	return out;
 }
 
 template <typename Type>
 bool Vecteur<Type>::isEmpty() const
 {
-	return false;
+	return size == 0;
 }
 
 template <typename Type>
 Type* Vecteur<Type>::getEllementAt(int index)
 {	
-	return nullptr;
+	if (index < 0 || index >= size)
+	{
+		return nullptr;
+	}
+	return tab[index];
 }
 
 template<>
@@ -91,8 +101,14 @@ void Vecteur<Forme>::afficher(std::ostream& s) const
 template <typename Type>
 void Vecteur<Type>::doubleCapaciter()
 {
-	
+	Type** temp = new Type*[2*capacity];
+	for(int i =0; i<size; i++)
+	{
+		temp[i] = tab[i];
+	}
+	delete [] tab;
+	tab = temp;
+	capacity*=2;
 }
 
-template class Vecteur<int>;
 template class Vecteur<Forme>;

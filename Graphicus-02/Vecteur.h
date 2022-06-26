@@ -11,20 +11,18 @@ public:
 	~Vecteur();
 	
 	bool insert(Type* newEllement);
-	void getSize() const;
-	void getCapacity() const;
+	int getSize() const;
+	int getCapacity() const;
 	void clear();
-	void remove(int index);
+	Type* remove(int index);
 	bool isEmpty() const;
 	Type* getEllementAt(int index);
 	
 	void afficher(std::ostream& s) const;
-	//template<>
-	//void Vecteur<Forme>::afficher();
 	
 private:
 	Type** tab;
-	int size;
+	int size = 0;
 	int capacity = 10;
 	
 	void doubleCapaciter();

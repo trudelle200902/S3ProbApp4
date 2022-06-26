@@ -13,7 +13,14 @@
 
 class Couche
 {
-   // Classe a completer
+public:
+	bool AjoutForme(forme* point);
+	forme* RetraitForme(int index);
+	forme* FormeStockee(int index);
+	float AireTotale();
+	bool Translate(int x, int y);
+	bool ChangerEtat(Etat);
+	void AfficherContenu(flot)
 };
 
 #endif

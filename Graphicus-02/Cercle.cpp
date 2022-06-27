@@ -15,12 +15,12 @@ Cercle::Cercle( int ancx, int ancy,int r)
 	rayon=r;
 }
 
-double Cercle::aire() const
+double Cercle::aire()
 {
 	return double(rayon*rayon)*Pi;
 }
 
-void Cercle::afficher(ostream & s) const
+void Cercle::afficher(ostream & s)
 {
 		s<<"Cercle(x="<<ancrage.x<<", y="<<ancrage.y<<", r="<<rayon<<", aire="<<aire()<<")\n";
 }

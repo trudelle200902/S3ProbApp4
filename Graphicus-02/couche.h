@@ -38,9 +38,11 @@ public:
 	void AfficherContenu(ostream & s);
 	DiffEtats Etat=Initialisee;
 	
+	
 private:
 	Vecteur<Forme>* nForme;
-	bool IsEmpty=false;
+	bool IsEmpty=true;
+	
 };
 
 #endif

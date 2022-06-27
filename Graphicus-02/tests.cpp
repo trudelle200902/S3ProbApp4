@@ -10,26 +10,26 @@
 #include "tests.h"
 
 
-void tests_validation()
+void Tests::tests_validation()
 {
 	//Creation d'un canevas
 	Canevas canevas;
 	//Etape1: Activer la couche 1 du canevas
-	cout<<"Etape1: Activation de la couche 1"<<endl;
+	cout<<"Etape1: Activation TTT de la couche 1"<<endl;
 	cout<<"---------------------------------"<<endl;
 	cout<<"Etat des couches avant activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	canevas.activerCouche(1);
 	cout<<"Etat des couches apres activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<"apres"<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	cout<<"\n";
 	//Etape2: Ajout des 3 formes dans la couche 1
 	cout<<"Etape2: Ajout des 3 formes a la couche 1"<<endl;
@@ -37,7 +37,7 @@ void tests_validation()
 	Forme* r1= new Rectangle(0,0,2,3);
 	canevas.ajouterForme(r1);
 	cout<<"Rectancle 0,0,2,3 ajoute"<<endl;
-	Forme* s1= new carre(2,3,4);
+	Forme* s1= new Carre(2,3,4);
 	canevas.ajouterForme(s1);
 	cout<<"Carre 2,3,4 ajoute"<<endl;
 	Forme* c1= new Cercle(7,8,6);
@@ -45,23 +45,23 @@ void tests_validation()
 	cout<<"Cercle 7,8,6 ajoute"<<endl;
 	cout<<"Affichage du contenu des couches"<<endl;
 	canevas.afficher(cout);
-	cout<<"\n"
+	cout<<"\n";
 	//Etape3: Activer la couche 1 du canevas
 	cout<<"Etape3: Activation de la couche 2"<<endl;
 	cout<<"---------------------------------"<<endl;
 	cout<<"Etat des couches avant activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	canevas.activerCouche(2);
 	cout<<"Etat des couches apres activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	cout<<"\n";
 	//Etape4: Ajout d'une forme dans la couche 2
 	cout<<"Etape4: Ajout d'une formee a la couche 2"<<endl;
@@ -84,18 +84,18 @@ void tests_validation()
 	cout<<"Etape7: Activation de la couche 0"<<endl;
 	cout<<"---------------------------------"<<endl;
 	cout<<"Etat des couches avant activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	canevas.activerCouche(0);
 	cout<<"Etat des couches apres activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	cout<<"\n";
 		//SousEtape7a: Ajout de 3 formes a la couche 0
 	cout<<"SousEtape7a: Ajout des 3 formes a la couche 0"<<endl;
@@ -103,7 +103,7 @@ void tests_validation()
 	Forme* r3= new Rectangle();
 	canevas.ajouterForme(r3);
 	cout<<"Rectancle 0,0,1,1 ajoute"<<endl;
-	Forme* s2= new carre();
+	Forme* s2= new Carre();
 	canevas.ajouterForme(s2);
 	cout<<"Carre 0,0,1 ajoute"<<endl;
 	Forme* c2= new Cercle();
@@ -111,41 +111,44 @@ void tests_validation()
 	cout<<"Cercle 0,0,1 ajoute"<<endl;
 	cout<<"Affichage du contenu des couches"<<endl;
 	canevas.afficher(cout);
-	cout<<"\n"
+	cout<<"\n";
 	//Etape8: Activer la couche 1 du canevas
 	cout<<"Etape8: Activation de la couche 1"<<endl;
 	cout<<"---------------------------------"<<endl;
 	cout<<"Etat des couches avant activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	canevas.activerCouche(1);
 	cout<<"Etat des couches apres activation"<<endl;
-	cout<<"couche 0: "<<canevas.couches[0].etat<<endl;
-	cout<<"couche 1: "<<canevas.couches[1].etat<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 0: "<<canevas.getCouche(0).Etat<<endl;
+	cout<<"couche 1: "<<canevas.getCouche(1).Etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
 	cout<<"\n";
 		//SousEtape8a: Translation sur la couche 1 de x=5 et y=5
 	cout<<"SousEtape8b: Translation sur la couche 1 (5,5)"<<endl;
 	cout<<"---------------------------------"<<endl;
 	canevas.translater(5,5);
-	cout<<"\n"
+	cout<<"\n";
 	//Etape9: Etat de la couche 2
 	cout<<"Etape9: Etat de la couche 2"<<endl;
 	cout<<"---------------------------------"<<endl;
-	cout<<"couche 2: "<<canevas.couches[2].etat<<endl;
+	cout<<"couche 2: "<<canevas.getCouche(2).Etat<<endl;
+	cout<<"\n";
 	//Etape10: Etat de la couche 3
 	cout<<"Etape10: Etat de la couche 3"<<endl;
 	cout<<"---------------------------------"<<endl;
-	cout<<"couche 3: "<<canevas.couches[3].etat<<endl;
+	cout<<"couche 3: "<<canevas.getCouche(3).Etat<<endl;
+	cout<<"\n";
 	//Etape11: Etat de la couche 4
 	cout<<"Etape11: Etat de la couche 4"<<endl;
 	cout<<"---------------------------------"<<endl;
-	cout<<"couche 4: "<<canevas.couches[4].etat<<endl;
+	cout<<"couche 4: "<<canevas.getCouche(4).Etat<<endl;
+	cout<<"\n";
 	//Etape12: Afficher le canevas
 	cout<<"Etape12:Afficher le canevas"<<endl;
 	cout<<"---------------------------------"<<endl;

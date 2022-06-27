@@ -11,9 +11,10 @@ using namespace std;
 
 int main()
 {
-   Tests tests;
-   
-   tests.tests_application();
-   return 0;
+	
+	Tests tests;
+	//tests.tests_application();
+	tests.tests_validation();
+	return 0;
 }
 

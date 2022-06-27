@@ -7,6 +7,7 @@
 ********/
 
 #include "canevas.h"
+#include <iostream>
 
 Canevas::Canevas()
 {
@@ -40,22 +41,27 @@ bool Canevas::reinitialiser()
 
 bool Canevas::activerCouche(int index)
 {
+	
 	if(index<0)
 	{
-		couches[0].Etat=Active;
-		couches[IndexCoucheActive].Etat=Inactive;
+		couches[0].setEtat(Active);
+		couches[IndexCoucheActive].setEtat(Inactive);
+		IndexCoucheActive=index;
 		return false;
 	}
 	else if(index>=MAX_COUCHES)
 	{
-		couches[MAX_COUCHES-1].Etat=Active;
-		couches[IndexCoucheActive].Etat=Inactive;
+		couches[MAX_COUCHES-1].setEtat(Active);
+		couches[IndexCoucheActive].setEtat(Inactive);
+		IndexCoucheActive=index;
 		return false;
 	}
 	else
 	{
-  couches[IndexCoucheActive].Etat=Inactive;
-	couches[index].Etat=Active;
+  couches[IndexCoucheActive].setEtat(Inactive);
+	couches[index].setEtat(Active);
+	IndexCoucheActive=index;
+	
   return true;
   }
 }
@@ -100,4 +106,10 @@ void Canevas::afficher(ostream & s)
 		s<<"----- Couche "<< i<<"\n";
 		couches[i].AfficherContenu(s);
 	}
+}
+
+Couche Canevas::getCouche(int index)const
+{
+	std::cout<<"dans getcouche\n";
+	return couches[index];
 }

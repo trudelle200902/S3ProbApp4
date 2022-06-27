@@ -72,7 +72,7 @@ bool Couche::setEtat(DiffEtats EtatIn)
 
 bool Couche::Reinitialiser()
 {
-	IsEmpty=false;
+	IsEmpty=true;
 	Etat=Initialisee;
 	nForme->clear();
 	return true;
@@ -82,7 +82,11 @@ void Couche::AfficherContenu(ostream & s)
 {
 	if(IsEmpty)
 	{
-		cout << "Couche vide"<< endl;
+		s <<"Couche initialisee\n";
+	}
+	else if(nForme->isEmpty())
+	{
+		s<<"Couche vide\n";
 	}
 	else
 	{ 

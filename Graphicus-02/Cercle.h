@@ -10,8 +10,8 @@ protected:
 	int rayon;
 public:
 	Cercle(int ancx=0,int ancy=0,int r=1);
-	double aire() const;
-  void afficher(ostream & s)const;
+	double aire();
+  void afficher(ostream & s);
   void setDimensionsC(int r);
 };
 #endif

@@ -11,6 +11,8 @@
 #ifndef COUCHE_H
 #define COUCHE_H
 
+#include "vecteur.h"
+
 class Couche
 {
 public:
@@ -20,7 +22,9 @@ public:
 	float AireTotale();
 	bool Translate(int x, int y);
 	bool ChangerEtat(Etat);
-	void AfficherContenu(flot)
+	void AfficherContenu(flot);
+private:
+	vector forme[];
 };
 
 #endif

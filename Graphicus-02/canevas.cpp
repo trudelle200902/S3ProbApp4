@@ -10,10 +10,12 @@
 
 Canevas::Canevas()
 {
+	
 }
 
 Canevas::~Canevas()
 {
+	
 }
 
 bool Canevas::reinitialiser()

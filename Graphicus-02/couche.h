@@ -29,10 +29,10 @@ public:
 	bool AjoutForme(Forme* point);
 	Forme* RetraitForme(int index);
 	Forme* FormeStockee(int index);
-	double AireTotale();
+	double aire();
 	bool Translate(int x, int y);
 	bool Reinitialiser();
-	bool SetEtat(DiffEtats EtatIn);
+	bool setEtat(DiffEtats EtatIn);
 	void AfficherContenu();
 	
 private:

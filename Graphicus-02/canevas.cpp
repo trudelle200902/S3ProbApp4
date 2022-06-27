@@ -10,7 +10,12 @@
 
 Canevas::Canevas()
 {
-	
+	couches[0].setEtat(Active);
+	for(int i=1;i<MAX_COUCHES;i++)
+	{
+		couches[i].setEtat(Initialisee);
+	}
+	IndexCoucheActive=0;
 }
 
 Canevas::~Canevas()
@@ -20,39 +25,79 @@ Canevas::~Canevas()
 
 bool Canevas::reinitialiser()
 {
-   return true;
+	for(int i=0;i<MAX_COUCHES;i++)
+	{
+		couches[i].Reinitialiser();
+	}
+	couches[0].setEtat(Active);
+	for(int i=1;i<MAX_COUCHES;i++)
+	{
+		couches[i].setEtat(Initialisee);
+	}
+	IndexCoucheActive=0;
+  return true;
 }
 
 bool Canevas::activerCouche(int index)
 {
-   return true;
+	if(index<0)
+	{
+		couches[0].Etat=Active;
+		couches[IndexCoucheActive].Etat=Inactive;
+		return FALSE;
+	}
+	else if(index>=MAX_COUCHES)
+	{
+		couches[MAX_COUCHES-1].Etat=Active;
+		couches[IndexCoucheActive].Etat=Inactive;
+		return FALSE;
+	}
+	else
+	{
+  couches[IndexCoucheActive].Etat=Inactive;
+	couches[index].Etat=Active;
+  return true;
+  }
 }
 
-bool Canevas::cacherCouche(int index)
+/*bool Canevas::cacherCouche(int index)
 {
-   return true;
-}
+	
+  return true;
+}*/
 
 bool Canevas::ajouterForme(Forme *p_forme)
 {
-   return true;
+	return couches[IndexCoucheActive].AjoutForme(p_forme);
 }
 
 bool Canevas::retirerForme(int index)
 {
-   return true;
+	Forme* Element=couches[IndexCoucheActive].RetraitForme(index);
+	if(Element==nullptr)
+	{
+		return FALSE;
+	}
+	delete Element;
+	return TRUE;
 }
 
 double Canevas::aire()
 {
-   return 0.0;
+	
+  return couches[IndexCoucheActive].aire() ;
 }
 
 bool Canevas::translater(int deltaX, int deltaY)
 {
-   return true;
+   return couches[IndexCoucheActive].Translate(deltaX,deltaY); 
 }
 
 void Canevas::afficher(ostream & s)
 {
+	for(int i=0;i<MAX_COUCHES;i++)
+	{
+		s<<"----- Couche "<< i<<"\n";
+		couches[i].AfficherContenu(s);
+	}
 }

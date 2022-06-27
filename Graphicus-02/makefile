@@ -6,10 +6,10 @@
 #
 all: graphicus-02 clean
 
-graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o Vecteur.o
+graphicus-02: graphicus-02.o tests.o canevas.o couche.o forme.o Vecteur.o Rectangle.o Cercle.o Carre.o
 	g++ -o graphicus-02 graphicus-02.o tests.o canevas.o couche.o forme.o Vecteur.o
 
-graphicus-02.o: graphicus-02.cpp canevas.h couche.h forme.h
+graphicus-02.o: graphicus-02.cpp canevas.h couche.h forme.h 
 	g++ -c graphicus-02.cpp
 
 tests.o: tests.cpp tests.h canevas.h couche.h forme.h

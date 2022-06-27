@@ -7,26 +7,28 @@
 ********/
 
 #include "Rectangle.h"
+using namespace std;
 
-Rectangle::Rectangle(int x1,int y1)
+Rectangle::Rectangle(int ancx,int ancy,int dimx,int dimy)
+:Forme(ancx,ancy)
 {
-	LHorizontal=x1;
-	LVertical=y1;
+	LHorizontal=dimx;
+	LVertical=dimy;
 }
 
 double Rectangle::aire()
 {
-	Aire=LHorizontal*LVertical;
+	return (double)(LHorizontal*LVertical);
 }
 
 void afficher(ostream & s)
 {
-	
+	cout<<"Rectangle(x="<<ancrage.x<<", y="<<ancrage.y<<", l="<<LVertical<<", h="<<LHorizontal<<", aire="<<aire()<<")";
 }
 
-void DimensionsRectangle(int x2, int y2)
+void setDimensionsR(int dimx, int dimy)
 {
-	LHorizontal=x2;
-	LVertical=y2;
+	LHorizontal=dimx;
+	LVertical=dimy;
 }
 

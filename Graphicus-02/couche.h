@@ -12,29 +12,33 @@
 #define COUCHE_H
 
 #include "vecteur.h"
+#include "forme.h"
 
-typedef enum DifferentsEtats
+enum DiffEtats
 {
 	Initialisee,
 	Active,
 	Inactive
-} En_Etats;
-
-Etats
+};
 
 class Couche
 {
 public:
-	bool AjoutForme(forme* point);
-	forme* RetraitForme(int index);
-	forme* FormeStockee(int index);
-	float AireTotale();
+	Couche();
+	~Couche();
+	bool AjoutForme(Forme* point);
+	Forme* RetraitForme(int index);
+	Forme* FormeStockee(int index);
+	double AireTotale();
 	bool Translate(int x, int y);
-	bool ChangerEtat(En_Etats Etat);
+	bool Reinitialiser();
+	bool SetEtat(DiffEtats EtatIn);
 	void AfficherContenu();
+	
 private:
-	vector forme[];
-	En_Etats Etat;
+	Vecteur<Forme>* nForme;
+	DiffEtats Etat=Initialisee;
+	bool IsEmpty=FALSE;
 };
 
 #endif

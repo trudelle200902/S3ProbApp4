@@ -9,8 +9,8 @@ class cercle:public forme
 protected:
 	rayon;
 public:
-	Cercle(int r=1);
+	Cercle(int ancx=0,int ancy=0,int r=1);
 	double aire();
-  	void afficher(ostream & s);
-  	void DimensionsCercle(int r);
+  void afficher(ostream & s);
+  void setDimensionsC(int r);
 }

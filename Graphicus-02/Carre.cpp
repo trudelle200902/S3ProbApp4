@@ -9,13 +9,20 @@
 #include "Carre.h"
 
 
-	Carre(int c1)
+	Carre::Carre(int ancx,int ancy,int c):
+	Forme(ancx,ancy)
 	{
-		LHorizontal=c1;
-		LVertical=c1;
+		LHorizontal=c;
+		LVertical=c;
 	}
-	void DimensionsCarre(int c2)
+	
+	void Carre::setDimensionsS(int c)
 	{
-		LHorizontal=c2;
-		LVertical=c2;
+		LHorizontal=c;
+		LVertical=c;
+	}
+	
+	void afficher(ostream & s)
+	{
+		cout<<"Carre(x="<<ancrage.x<<", y="<<ancrage.y<<", c="<<LVertical<<", aire="<<aire()<<")";
 	}

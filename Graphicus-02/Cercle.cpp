@@ -7,23 +7,25 @@
 ********/
 
 #include "Cercle.h"
-#define Pi 3.14159265
+#define Pi 3.14
 
-Cercle(int r1)
+Cercle::Cercle( int ancx, int ancy,int r)
+:Forme(ancx,ancy)
 {
-	rayon=r1;
+	rayon=r;
 }
 
-double aire()
+double Cercle::aire() const
 {
-	Aire=rayon*rayon*Pi;
+	return double(rayon*rayon)*Pi;
 }
 
-void afficher(ostream & s)
+void Cercle::afficher(ostream & s) const
 {
+		cout<<"Cercle(x="<<ancrage.x<<", y="<<ancrage.y<<", r="<<rayon<<", aire="<<aire()<<")";
 }
 
-void DimensionsCercle(int r2)
+void Cercle::setDimensionsC(int r)
 {
-	rayon=r2;
+	rayon=r;
 }

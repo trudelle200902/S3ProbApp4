@@ -6,14 +6,14 @@
 class Rectangle: public forme
 {
 protected:
-	LHorizontal;
-	LVertical;
-	Aire;
+	int LHorizontal;
+	int LVertical;
+	
 
 public:
-	Rectangle(int x=1,int y=1);
+	Rectangle(int ancx=0, int ancy=0,int dimx=1,int dimy=1);
 	double aire();
-  void afficher(ostream & s);
-  void DimensionsRectangle(int x, int y);
+  virtual void afficher(ostream & s);
+  void setDimensionsR(int dimx, int dimy);
 }
 	

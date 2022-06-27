@@ -13,6 +13,15 @@
 
 #include "vecteur.h"
 
+typedef enum DifferentsEtats
+{
+	Initialisee,
+	Active,
+	Inactive
+} En_Etats;
+
+Etats
+
 class Couche
 {
 public:
@@ -21,10 +30,11 @@ public:
 	forme* FormeStockee(int index);
 	float AireTotale();
 	bool Translate(int x, int y);
-	bool ChangerEtat(Etat);
-	void AfficherContenu(flot);
+	bool ChangerEtat(En_Etats Etat);
+	void AfficherContenu();
 private:
 	vector forme[];
+	En_Etats Etat;
 };
 
 #endif

@@ -24,5 +24,5 @@
 	
 	void afficher(ostream & s)
 	{
-		cout<<"Carre(x="<<ancrage.x<<", y="<<ancrage.y<<", c="<<LVertical<<", aire="<<aire()<<")";
+		s<<"Carre(x="<<ancrage.x<<", y="<<ancrage.y<<", c="<<LVertical<<", aire="<<aire()<<")\n";
 	}

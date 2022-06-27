@@ -36,7 +36,7 @@ Forme* Couche::FormeStockee(int index)
 	return nForme->getElementAt(index);
 }
 
-double Couche::AireTotale()
+double Couche::aire()
 {
 	double Atotale=0.0;
 	double A=0.0;
@@ -64,7 +64,7 @@ bool Couche::Translate(int x, int y)
 	return TRUE;
 }
 
-bool Couche::SetEtat(DiffEtats EtatIn)
+bool Couche::setEtat(DiffEtats EtatIn)
 {
 	Etat=EtatIn;
 }
@@ -85,9 +85,10 @@ void Couche::AfficherContenu(ostream & s)
 	}
 	else
 	{ 
-	for(int i=0;i<(nForme->getSize());i++)
-	{
-		nForme->getElementAt(i)->Afficher(ostream & s);
+		for(int i=0;i<(nForme->getSize());i++)
+		{
+			nForme->getElementAt(i)->Afficher(ostream & s);
+		}
 	}
 }
 

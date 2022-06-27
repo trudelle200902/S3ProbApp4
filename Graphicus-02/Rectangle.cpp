@@ -23,7 +23,7 @@ double Rectangle::aire()
 
 void afficher(ostream & s)
 {
-	cout<<"Rectangle(x="<<ancrage.x<<", y="<<ancrage.y<<", l="<<LVertical<<", h="<<LHorizontal<<", aire="<<aire()<<")";
+	s<<"Rectangle(x="<<ancrage.x<<", y="<<ancrage.y<<", l="<<LVertical<<", h="<<LHorizontal<<", aire="<<aire()<<")\n";
 }
 
 void setDimensionsR(int dimx, int dimy)

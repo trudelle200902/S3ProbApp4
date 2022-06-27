@@ -22,7 +22,7 @@ double Cercle::aire() const
 
 void Cercle::afficher(ostream & s) const
 {
-		cout<<"Cercle(x="<<ancrage.x<<", y="<<ancrage.y<<", r="<<rayon<<", aire="<<aire()<<")";
+		s<<"Cercle(x="<<ancrage.x<<", y="<<ancrage.y<<", r="<<rayon<<", aire="<<aire()<<")\n";
 }
 
 void Cercle::setDimensionsC(int r)

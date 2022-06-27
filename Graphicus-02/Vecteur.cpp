@@ -61,7 +61,7 @@ void Vecteur<Type>::clear()
 template <typename Type>
 Type* Vecteur<Type>::remove(int index)
 {
-	if (size <= index)
+	if (size <= index || index < 0)
 	{
 		return nullptr;
 	}

@@ -22,7 +22,7 @@ Couche::~Couche()
 
 bool Couche::AjoutForme(Forme* point)
 {
-	IsEmpty=FALSE;
+	IsEmpty=false;
 	return nForme->insert(point);
 }
 
@@ -42,8 +42,8 @@ double Couche::aire()
 	double A=0.0;
 	for(int i=0;i<(nForme->getSize());i++)
 	{
-		Forme_i*=nForme->getElementAt(i);
-		A=Forme_i->Aire();
+		Forme* Element=nForme->getElementAt(i);
+		A=Element->aire();
 		Atotale=Atotale+A;
 	}
 	return Atotale;
@@ -57,24 +57,25 @@ bool Couche::Translate(int x, int y)
 		Forme* Element=nForme->getElementAt(i);
 		if(Element==nullptr)
 		{
-			return FALSE;
+			return false;
 		}
-		Element->Translater(x,y);
+		Element->translater(x,y);
 	}
-	return TRUE;
+	return true;
 }
 
 bool Couche::setEtat(DiffEtats EtatIn)
 {
 	Etat=EtatIn;
+	return true;
 }
 
 bool Couche::Reinitialiser()
 {
-	IsEmpty=FALSE;
-	Etat=Initalisee;
+	IsEmpty=false;
+	Etat=Initialisee;
 	nForme->clear();
-	
+	return true;
 }
 	
 void Couche::AfficherContenu(ostream & s)
@@ -87,7 +88,7 @@ void Couche::AfficherContenu(ostream & s)
 	{ 
 		for(int i=0;i<(nForme->getSize());i++)
 		{
-			nForme->getElementAt(i)->Afficher(ostream & s);
+			nForme->getElementAt(i)->afficher(s);
 		}
 	}
 }

@@ -1,7 +1,6 @@
 #include "Vecteur.h"
 #include "forme.h"
 
-#include <iostream>
 
 template <typename Type>
 Vecteur<Type>::Vecteur()
@@ -24,14 +23,14 @@ Vecteur<Type>::~Vecteur()
 }
 
 template <typename Type>
-bool Vecteur<Type>::insert(Type* newEllement)
+bool Vecteur<Type>::insert(Type* newElement)
 {
 	if(size >= capacity)
 	{
 		doubleCapaciter();
 	}
 
-	tab[size] = newEllement;
+	tab[size] = newElement;
 	size++;
 	return false;
 }
@@ -61,7 +60,7 @@ void Vecteur<Type>::clear()
 template <typename Type>
 Type* Vecteur<Type>::remove(int index)
 {
-	if (size <= index)
+	if (size <= index || index < 0)
 	{
 		return nullptr;
 	}
@@ -80,7 +79,7 @@ bool Vecteur<Type>::isEmpty() const
 }
 
 template <typename Type>
-Type* Vecteur<Type>::getEllementAt(int index)
+Type* Vecteur<Type>::getElementAt(int index)
 {	
 	if (index < 0 || index >= size)
 	{
@@ -90,7 +89,7 @@ Type* Vecteur<Type>::getEllementAt(int index)
 }
 
 template<>
-void Vecteur<Forme>::afficher(std::ostream& s) const
+void Vecteur<Forme>::afficher(ostream & s) const
 {
 	for(int i =0; i<size;i++)
 	{

@@ -10,10 +10,8 @@
 
 
 	Carre::Carre(int ancx,int ancy,int c):
-	Forme(ancx,ancy)
+	Rectangle(ancx,ancy,c, c)
 	{
-		LHorizontal=c;
-		LVertical=c;
 	}
 	
 	void Carre::setDimensionsS(int c)
@@ -22,7 +20,7 @@
 		LVertical=c;
 	}
 	
-	void afficher(ostream & s)
+	void Carre::afficher(ostream & s)
 	{
 		s<<"Carre(x="<<ancrage.x<<", y="<<ancrage.y<<", c="<<LVertical<<", aire="<<aire()<<")\n";
 	}

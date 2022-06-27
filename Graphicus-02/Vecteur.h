@@ -3,22 +3,23 @@
 
 #include <iostream>
 
-//c quoi ellement contingu en memoire?
+using namespace std;
+
 template <typename Type>
 class Vecteur{
 public:
 	Vecteur();
 	~Vecteur();
 	
-	bool insert(Type* newEllement);
+	bool insert(Type* newElement);
 	int getSize() const;
 	int getCapacity() const;
 	void clear();
 	Type* remove(int index);
 	bool isEmpty() const;
-	Type* getEllementAt(int index);
+	Type* getElementAt(int index);
 	
-	void afficher(std::ostream& s) const;
+	void afficher(ostream & s) const;
 	
 private:
 	Type** tab;

@@ -4,13 +4,14 @@
 #include "forme.h"
 
 
-class cercle:public forme
+class Cercle:public Forme
 {
 protected:
-	rayon;
+	int rayon;
 public:
 	Cercle(int ancx=0,int ancy=0,int r=1);
-	double aire();
-  void afficher(ostream & s);
+	double aire() const;
+  void afficher(ostream & s)const;
   void setDimensionsC(int r);
-}
+};
+#endif

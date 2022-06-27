@@ -7,6 +7,7 @@
 ********/
 
 #include "Rectangle.h"
+
 using namespace std;
 
 Rectangle::Rectangle(int ancx,int ancy,int dimx,int dimy)
@@ -21,12 +22,12 @@ double Rectangle::aire()
 	return (double)(LHorizontal*LVertical);
 }
 
-void afficher(ostream & s)
+void Rectangle::afficher(ostream & s)
 {
 	s<<"Rectangle(x="<<ancrage.x<<", y="<<ancrage.y<<", l="<<LVertical<<", h="<<LHorizontal<<", aire="<<aire()<<")\n";
 }
 
-void setDimensionsR(int dimx, int dimy)
+void Rectangle::setDimensionsR(int dimx, int dimy)
 {
 	LHorizontal=dimx;
 	LVertical=dimy;

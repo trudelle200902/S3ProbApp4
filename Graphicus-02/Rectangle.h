@@ -3,7 +3,7 @@
 
 #include "forme.h"
 
-class Rectangle: public forme
+class Rectangle: public Forme
 {
 protected:
 	int LHorizontal;
@@ -15,5 +15,5 @@ public:
 	double aire();
   virtual void afficher(ostream & s);
   void setDimensionsR(int dimx, int dimy);
-}
-	
+};
+#endif

@@ -44,13 +44,13 @@ bool Canevas::activerCouche(int index)
 	{
 		couches[0].Etat=Active;
 		couches[IndexCoucheActive].Etat=Inactive;
-		return FALSE;
+		return false;
 	}
 	else if(index>=MAX_COUCHES)
 	{
 		couches[MAX_COUCHES-1].Etat=Active;
 		couches[IndexCoucheActive].Etat=Inactive;
-		return FALSE;
+		return false;
 	}
 	else
 	{
@@ -76,10 +76,10 @@ bool Canevas::retirerForme(int index)
 	Forme* Element=couches[IndexCoucheActive].RetraitForme(index);
 	if(Element==nullptr)
 	{
-		return FALSE;
+		return false;
 	}
 	delete Element;
-	return TRUE;
+	return true;
 }
 
 double Canevas::aire()

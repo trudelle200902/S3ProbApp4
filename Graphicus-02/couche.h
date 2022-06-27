@@ -11,8 +11,10 @@
 #ifndef COUCHE_H
 #define COUCHE_H
 
-#include "vecteur.h"
+#include "Vecteur.h"
 #include "forme.h"
+
+using namespace std;
 
 enum DiffEtats
 {
@@ -33,12 +35,12 @@ public:
 	bool Translate(int x, int y);
 	bool Reinitialiser();
 	bool setEtat(DiffEtats EtatIn);
-	void AfficherContenu();
+	void AfficherContenu(ostream & s);
+	DiffEtats Etat=Initialisee;
 	
 private:
 	Vecteur<Forme>* nForme;
-	DiffEtats Etat=Initialisee;
-	bool IsEmpty=FALSE;
+	bool IsEmpty=false;
 };
 
 #endif

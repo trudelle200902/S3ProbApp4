@@ -114,7 +114,7 @@ void Canevas::afficher(ostream & s)
 	}
 }
 
-Couche Canevas::getCouche(int index)const
+Couche* Canevas::getCouche(int index)
 {
-	return couches[index];
+	return &couches[index];
 }

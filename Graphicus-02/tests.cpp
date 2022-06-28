@@ -79,11 +79,12 @@ void Tests::tests_validation()
 		canevas.translater(5,5);
 		cout<<"\n";
 	//Etape9: Etat de la couche 2
-	cout<<"Etape9: Etat de la couche 2"<<endl;
+	cout<<"Etape9: Reinitialisation et Etat de la couche 2"<<endl;
 	cout<<"---------------------------------"<<endl;
 	cout<<"couche 2: ";
-	Couche interm=canevas.getCouche(2);
-	switch(interm.Etat)
+	canevas.getCouche(2)->Reinitialiser();
+	Couche* interm=canevas.getCouche(2);
+	switch(interm->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";
@@ -97,13 +98,14 @@ void Tests::tests_validation()
 		cout<<"Inactive\n";
 		break;
 	}
+	
 	cout<<"\n";
 	//Etape10: Etat de la couche 3
 	cout<<"Etape10: Etat de la couche 3"<<endl;
 	cout<<"---------------------------------"<<endl;
 	cout<<"couche 3: ";
 	interm=canevas.getCouche(3);
-	switch(interm.Etat)
+	switch(interm->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";
@@ -123,7 +125,7 @@ void Tests::tests_validation()
 	cout<<"---------------------------------"<<endl;
 	cout<<"couche 4: ";
 	interm=canevas.getCouche(4);
-	switch(interm.Etat)
+	switch(interm->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";

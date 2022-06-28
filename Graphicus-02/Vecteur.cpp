@@ -20,6 +20,10 @@ Vecteur<Type>::~Vecteur()
 template <typename Type>
 bool Vecteur<Type>::insert(Type* newElement)
 {
+	if(newElement==nullptr)
+	{
+		return false;
+	}
 	if(size >= capacity)
 	{
 		doubleCapaciter();

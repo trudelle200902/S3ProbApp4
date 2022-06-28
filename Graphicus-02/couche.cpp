@@ -22,6 +22,10 @@ Couche::~Couche()
 
 bool Couche::AjoutForme(Forme* point)
 {
+	if(Etat==Inactive)
+	{
+		return false;
+	}
 	IsEmpty=false;
 	return nForme.insert(point);
 }
@@ -72,12 +76,20 @@ bool Couche::Translate(int x, int y)
 
 bool Couche::setEtat(DiffEtats EtatIn)
 {
+	if(EtatIn==Initialisee)
+	{
+		return false;
+	}
 	Etat=EtatIn;
 	return true;
 }
 
 bool Couche::Reinitialiser()
 {
+	if(IsEmpty)
+	{
+		return false;
+	}
 	IsEmpty=true;
 	Etat=Initialisee;
 	nForme.clear();

@@ -193,7 +193,61 @@ void Tests::tests_unitaires_canevas()
 
 void Tests::tests_unitaires_couche()
 {
-   // Tests sur la classe Couche
+	cout<<"Test Couche1:\n";
+	cout<<"---------------------\n";
+	cout<<"+Pointeur Rectangle(0,0,3,6)\n";
+	Forme* rec1=new Rectangle(0,0,3,6);
+	cout<<"+Pointeur Rectangle(2,1,4,1)\n";
+	Forme* rec2=new Rectangle(2,1,4,1);
+	Couche coucheTest;
+	cout<<"//Activation de la couche\n";
+	coucheTest.setEtat(Active);
+	cout<<"//Ajout de la forme\n";
+	coucheTest.AjoutForme(rec1);
+	coucheTest.AjoutForme(rec2);
+	cout<<"//Affichage de l'aire\n";
+	cout<<"Aire Couche= "<<coucheTest.aire()<<endl;
+	cout<<"//Affichage du contenu de la couche avec les 2 formes\n";
+	coucheTest.AfficherContenu(cout);
+	cout<<"-Pointeur Rectangle(0,0,3,6)\n";
+	coucheTest.RetraitForme(0);
+	cout<<"//Affichage du contenu de la couche avec 1 forme restante\n";
+	coucheTest.AfficherContenu(cout);
+	cout<<"-Pointeur Rectangle(2,1,4,1)\n";
+	coucheTest.RetraitForme(0);
+	cout<<"//Affichage du contenu de la couche vide\n";
+	coucheTest.AfficherContenu(cout);
+	cout<<"//Reinitialisation\n";
+	coucheTest.Reinitialiser();
+	cout<<"//Affichage du contenu de la couche reinitialisee\n";
+	coucheTest.AfficherContenu(cout);
+	
+	cout<<"Test Couche2:\n";
+	cout<<"---------------------\n";
+	cout<<"+Pointeur Carre(0,0,4)\n";
+	Forme* car1=new Carre(0,0,4);
+	cout<<"//Activation de la couche\n";
+	coucheTest.setEtat(Active);
+	cout<<"//Ajout de la forme\n";
+	coucheTest.AjoutForme(car1);
+	cout<<"//Affichage du contenu de la couche avec la forme\n";
+	coucheTest.AfficherContenu(cout);
+	cout<<"//Translation (2,2)\n";
+	coucheTest.Translate(5,5);
+	cout<<"//Affichage du contenu de la couche avec la forme\n";
+	coucheTest.AfficherContenu(cout);
+	cout<<"//Inactivation de la couche\n";
+	coucheTest.setEtat(Inactive);
+	cout<<"-Pointeur Carre(0,0,4) **Devrait retourner une erreur**\n";
+	if(coucheTest.RetraitForme(0)==nullptr)
+	{
+		cout<<"Erreur, la couche est Inactive. Retrait impossible\n";
+	}
+	cout<<"//Affichage du contenu de la couche avec la forme\n";
+	coucheTest.AfficherContenu(cout);
+	cout<<"//Reinitialisation\n";
+	coucheTest.Reinitialiser();
+	
 }
 
 void Tests::tests_unitaires_formes()

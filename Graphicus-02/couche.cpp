@@ -32,6 +32,10 @@ bool Couche::AjoutForme(Forme* point)
 
 Forme* Couche::RetraitForme(int index)
 {
+	if(Etat==Inactive)
+	{
+		return nullptr;
+	}
 	return nForme.remove(index);
 }
 

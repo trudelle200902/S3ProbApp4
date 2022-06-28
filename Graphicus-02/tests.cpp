@@ -160,7 +160,35 @@ void Tests::tests_validation()
 	canevas.afficher(cout);
 	cout<<"\n";
 	//Etape13: Afficher l'aire totale du canevas
-	cout<<"Etape13:Afficher l'aire du canevas"<<endl;
+	cout<<"Etape13: Afficher l'aire du canevas"<<endl;
+	cout<<"---------------------------------"<<endl;
+	cout<<"Aire du canevas="<<canevas.aire()<<endl;
+	cout<<"\n";
+	//Etape14: Retirer 1ere forme de la couche 1
+	cout<<"Etape14: Retrait de la 1ere forme de la couche 1"<<endl;
+	cout<<"---------------------------------"<<endl;
+	canevas.retirerForme(0);
+	//Etape15: Afficher le canevas
+	cout<<"Etape15: Afficher le canevas"<<endl;
+	cout<<"---------------------------------"<<endl;
+	canevas.afficher(cout);
+	cout<<"\n";
+	//Etape16: Afficher l'aire totale du canevas
+	cout<<"Etape16: Afficher l'aire du canevas"<<endl;
+	cout<<"---------------------------------"<<endl;
+	cout<<"Aire du canevas="<<canevas.aire()<<endl;
+	cout<<"\n";
+	//Etape17: Reinitialisation du canevas
+	cout<<"Etape17: Reinitialisation du canevas"<<endl;
+	cout<<"---------------------------------"<<endl;
+	canevas.reinitialiser();
+	//Etape18: Afficher le canevas
+	cout<<"Etape18: Afficher le canevas"<<endl;
+	cout<<"---------------------------------"<<endl;
+	canevas.afficher(cout);
+	cout<<"\n";
+	//Etape19: Afficher l'aire totale du canevas
+	cout<<"Etape19: Afficher l'aire du canevas"<<endl;
 	cout<<"---------------------------------"<<endl;
 	cout<<"Aire du canevas="<<canevas.aire()<<endl;
 	cout<<"\n";

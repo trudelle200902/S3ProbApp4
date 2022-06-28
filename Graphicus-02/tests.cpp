@@ -196,22 +196,80 @@ void Tests::tests_unitaires_couche()
 
 void Tests::tests_unitaires_formes()
 {
+	cout<<"Test Forme1:\n";
+	cout<<"---------------------\n";
+	cout<<"+Rectangle(1,2,4,6)\n";
+	Rectangle r1(1,2,4,6);
+	cout<<"Ancrage: ("<<r1.getAncrage().x<<","<<r1.getAncrage().y<<")\n";
+	cout<<"+Translater de (5,5)\n";
+	r1.translater(5,5);
+	cout<<"Ancrage: ("<<r1.getAncrage().x<<","<<r1.getAncrage().y<<")\n";
+	cout<<"+setAncrage a (1,1) avec coordonnee {1,1}\n";
+	Coordonnee c{1,1};
+	r1.setAncrage(c);
+	cout<<"Ancrage: ("<<r1.getAncrage().x<<","<<r1.getAncrage().y<<")\n";
+	
 	
 }
 
-void tests_unitaires_cercle()
+void Tests::tests_unitaires_cercle()
 {
-
+	cout<<"Test Cercle1:\n";
+	cout<<"---------------------\n";
+	cout<<"+Cercle(6,11,3)\n";
+	Cercle c1(6,11,3);
+	c1.afficher(cout);
+	cout<<"+Redimensionne a 5\n";
+	c1.setDimensionsC(5);
+	c1.afficher(cout);
+	cout<<"\n";
+	
+	cout<<"Test Cercle2:\n";
+	cout<<"---------------------\n";
+	cout<<"+Cercle\n";
+	Cercle c2;
+	c2.afficher(cout);
+	cout<<"\n";
 }
 
-void tests_unitaires_rectangle()
+void Tests::tests_unitaires_rectangle()
 {
-
+	cout<<"Test Rectangle1:\n";
+	cout<<"---------------------\n";
+	cout<<"+Rectangle(8,2,3,4)\n";
+	Rectangle r1(8,2,3,4);
+	r1.afficher(cout);
+	cout<<"+Redimensionne a (5,3)\n";
+	r1.setDimensionsR(5,3);
+	r1.afficher(cout);
+	cout<<"\n";
+	
+	cout<<"Test Rectangle2:\n";
+	cout<<"---------------------\n";
+	cout<<"+Rectangle\n";
+	Rectangle r2;
+	r2.afficher(cout);
+	cout<<"\n";
 }
 
-void tests_unitaires_carre()
+void Tests::tests_unitaires_carre()
 {
-
+	cout<<"Test Carre1:\n";
+	cout<<"---------------------\n";
+	cout<<"+Carre(7,1,2)\n";
+	Carre s1(7,1,2);
+	s1.afficher(cout);
+	cout<<"+Redimensionne a (6)\n";
+	s1.setDimensionsS(6);
+	s1.afficher(cout);
+	cout<<"\n";
+	
+	cout<<"Test Carre2:\n";
+	cout<<"---------------------\n";
+	cout<<"+Carre\n";
+	Carre s2;
+	s2.afficher(cout);
+	cout<<"\n";
 }
 
 void Tests::tests_unitaires()

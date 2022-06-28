@@ -11,10 +11,13 @@ using namespace std;
 
 int main()
 {
-	
 	Tests tests;
 	//tests.tests_application();
-	tests.tests_validation();
+	//tests.tests_validation();
+	//tests.tests_unitaires_rectangle();
+	//tests.tests_unitaires_cercle();
+	//tests.tests_unitaires_carre();
+	tests.tests_unitaires_formes();
 	return 0;
 }
 

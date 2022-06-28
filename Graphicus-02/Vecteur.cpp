@@ -13,9 +13,7 @@ Vecteur<Type>::~Vecteur()
 {
 	if (!isEmpty())
 	{
-		cout<<"deleting\n";
 		delete [] tab;
-		cout<<"deleted\n";
 	}
 }
 
@@ -53,6 +51,7 @@ void Vecteur<Type>::clear()
 		delete tab[i];
 	}
 	size=0;
+	capacity=10;
 }
 
 template <typename Type>

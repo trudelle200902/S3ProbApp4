@@ -40,7 +40,7 @@ public:
 	
 	
 private:
-	Vecteur<Forme>* nForme;
+	Vecteur<Forme> nForme;
 	bool IsEmpty=true;
 	
 };

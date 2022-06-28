@@ -12,6 +12,7 @@ protected:
 
 public:
 	Rectangle(int ancx=0, int ancy=0,int dimx=1,int dimy=1);
+	virtual ~Rectangle();
 	double aire();
   virtual void afficher(ostream & s);
   void setDimensionsR(int dimx, int dimy);

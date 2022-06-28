@@ -5,6 +5,7 @@
 template <typename Type>
 Vecteur<Type>::Vecteur()
 {
+	cout<<capacity<<"\n";
 	tab = new Type*[capacity];
 }
 
@@ -25,14 +26,18 @@ Vecteur<Type>::~Vecteur()
 template <typename Type>
 bool Vecteur<Type>::insert(Type* newElement)
 {
+	cout<<"inInsert\n";
+	
 	if(size >= capacity)
 	{
+		cout<<"inIfInsert"<<size<<"s-c"<<capacity<<"\n";
 		doubleCapaciter();
 	}
 
 	tab[size] = newElement;
 	size++;
-	return false;
+	cout<<"exitInsert\n";
+	return true;
 }
 
 template <typename Type>
@@ -91,8 +96,10 @@ Type* Vecteur<Type>::getElementAt(int index)
 template<>
 void Vecteur<Forme>::afficher(ostream & s) const
 {
+	cout<<"inafficherVecteur\n";
 	for(int i =0; i<size;i++)
 	{
+		cout<<i<<"inforafficherVecteur\n";
 		tab[i]->afficher(s);
 	}
 }
@@ -100,7 +107,8 @@ void Vecteur<Forme>::afficher(ostream & s) const
 template <typename Type>
 void Vecteur<Type>::doubleCapaciter()
 {
-	Type** temp = new Type*[2*capacity];
+	Type** temp;
+	temp = new Type*[2*capacity];
 	for(int i =0; i<size; i++)
 	{
 		temp[i] = tab[i];

@@ -13,8 +13,14 @@ using namespace std;
 Rectangle::Rectangle(int ancx,int ancy,int dimx,int dimy)
 :Forme(ancx,ancy)
 {
+	cout<<"inRectangle\n";
 	LHorizontal=dimx;
 	LVertical=dimy;
+	cout<<"inRectangle\n";
+}
+
+Rectangle::~Rectangle()
+{
 }
 
 double Rectangle::aire()
@@ -24,6 +30,7 @@ double Rectangle::aire()
 
 void Rectangle::afficher(ostream & s)
 {
+	s<<"InRectangleAfficher\n";
 	s<<"Rectangle(x="<<ancrage.x<<", y="<<ancrage.y<<", l="<<LVertical<<", h="<<LHorizontal<<", aire="<<aire()<<")\n";
 }
 

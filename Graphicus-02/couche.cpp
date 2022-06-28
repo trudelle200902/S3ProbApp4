@@ -12,38 +12,47 @@ using namespace std;
 
 Couche::Couche()
 {
-	nForme=new Vecteur<Forme>;
+	//nForme=new Vecteur<Forme>;
 }
 
 Couche::~Couche()
 {
-	delete nForme;
+	//delete nForme;
 }
 
 bool Couche::AjoutForme(Forme* point)
 {
+	cout<<"in AjoutForme\n";
 	IsEmpty=false;
-	return nForme->insert(point);
+	return nForme.insert(point);
 }
 
 Forme* Couche::RetraitForme(int index)
 {
-	return nForme->remove(index);
+	return nForme.remove(index);
 }
 
 Forme* Couche::FormeStockee(int index)
 {
-	return nForme->getElementAt(index);
+	return nForme.getElementAt(index);
 }
 
 double Couche::aire()
 {
+	
+	cout<<"AireCouche\n";
+	if(Etat==Initialisee)
+	{
+		return 0.0;
+	}
 	double Atotale=0.0;
 	double A=0.0;
-	for(int i=0;i<(nForme->getSize());i++)
+	
+	for(int i=0;i<(nForme.getSize());i++)
 	{
-		Forme* Element=nForme->getElementAt(i);
+		Forme* Element=nForme.getElementAt(i);
 		A=Element->aire();
+		cout<<A<<"\n";
 		Atotale=Atotale+A;
 	}
 	return Atotale;
@@ -52,9 +61,9 @@ double Couche::aire()
 bool Couche::Translate(int x, int y)
 {
 
-	for(int i=0;i<(nForme->getSize());i++)
+	for(int i=0;i<(nForme.getSize());i++)
 	{
-		Forme* Element=nForme->getElementAt(i);
+		Forme* Element=nForme.getElementAt(i);
 		if(Element==nullptr)
 		{
 			return false;
@@ -74,26 +83,27 @@ bool Couche::Reinitialiser()
 {
 	IsEmpty=true;
 	Etat=Initialisee;
-	nForme->clear();
+	nForme.clear();
 	return true;
 }
 	
 void Couche::AfficherContenu(ostream & s)
 {
+	s<<"inAfficherContenu\n";
 	if(IsEmpty)
 	{
 		s <<"Couche initialisee\n";
 	}
-	else if(nForme->isEmpty())
+	else if(nForme.isEmpty())
 	{
 		s<<"Couche vide\n";
 	}
 	else
 	{ 
-		for(int i=0;i<(nForme->getSize());i++)
-		{
-			nForme->getElementAt(i)->afficher(s);
+		s<<"inAfficherContenuELSE\n";
+		nForme.afficher(s);
+			
 		}
 	}
-}
+
 

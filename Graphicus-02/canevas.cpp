@@ -74,6 +74,7 @@ bool Canevas::activerCouche(int index)
 
 bool Canevas::ajouterForme(Forme *p_forme)
 {
+	std::cout<<"in AjouterForme\n";
 	return couches[IndexCoucheActive].AjoutForme(p_forme);
 }
 
@@ -90,8 +91,17 @@ bool Canevas::retirerForme(int index)
 
 double Canevas::aire()
 {
-	
-  return couches[IndexCoucheActive].aire() ;
+	double AireCanevas=0.0;
+	double ACanevas=0.0;
+	for (int i=0;i<MAX_COUCHES;i++)
+	{
+	ACanevas=couches[i].aire();
+	cout<<"Acouche "<<i<<"= "<<ACanevas<<"\n";
+  AireCanevas=ACanevas+AireCanevas;
+  }
+  cout<<"AireCanevas in aire()"<<AireCanevas<<"\n";
+  return AireCanevas;
+  
 }
 
 bool Canevas::translater(int deltaX, int deltaY)
@@ -110,6 +120,5 @@ void Canevas::afficher(ostream & s)
 
 Couche Canevas::getCouche(int index)const
 {
-	std::cout<<"dans getcouche\n";
 	return couches[index];
 }

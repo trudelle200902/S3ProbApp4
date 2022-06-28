@@ -81,20 +81,62 @@ void Tests::tests_validation()
 	//Etape9: Etat de la couche 2
 	cout<<"Etape9: Etat de la couche 2"<<endl;
 	cout<<"---------------------------------"<<endl;
+	cout<<"couche 2: ";
 	Couche interm=canevas.getCouche(2);
-	cout<<"couche 2: "<<interm.Etat<<endl;
+	switch(interm.Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
 	cout<<"\n";
 	//Etape10: Etat de la couche 3
 	cout<<"Etape10: Etat de la couche 3"<<endl;
 	cout<<"---------------------------------"<<endl;
+	cout<<"couche 3: ";
 	interm=canevas.getCouche(3);
-	cout<<"couche 3: "<<interm.Etat<<endl;
+	switch(interm.Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
 	cout<<"\n";
 	//Etape11: Etat de la couche 4
 	cout<<"Etape11: Etat de la couche 4"<<endl;
 	cout<<"---------------------------------"<<endl;
+	cout<<"couche 4: ";
 	interm=canevas.getCouche(4);
-	cout<<"couche 4: "<<interm.Etat<<endl;
+	switch(interm.Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
 	cout<<"\n";
 	//Etape12: Afficher le canevas
 	cout<<"Etape12:Afficher le canevas"<<endl;

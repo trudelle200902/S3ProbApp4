@@ -22,7 +22,6 @@ Couche::~Couche()
 
 bool Couche::AjoutForme(Forme* point)
 {
-	cout<<"in AjoutForme\n";
 	IsEmpty=false;
 	return nForme.insert(point);
 }
@@ -39,12 +38,11 @@ Forme* Couche::FormeStockee(int index)
 
 double Couche::aire()
 {
-	
-	cout<<"AireCouche\n";
-	if(Etat==Initialisee)
+	if(Etat==Initialisee || nForme.isEmpty())
 	{
 		return 0.0;
 	}
+	
 	double Atotale=0.0;
 	double A=0.0;
 	
@@ -52,7 +50,6 @@ double Couche::aire()
 	{
 		Forme* Element=nForme.getElementAt(i);
 		A=Element->aire();
-		cout<<A<<"\n";
 		Atotale=Atotale+A;
 	}
 	return Atotale;

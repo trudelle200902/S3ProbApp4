@@ -11,14 +11,11 @@ Vecteur<Type>::Vecteur()
 template <typename Type>
 Vecteur<Type>::~Vecteur()
 {
-	if (tab != NULL)
+	if (!isEmpty())
 	{
-		for(int i =0; i<size;i++)
-		{
-			tab[i] = nullptr;
-			delete tab[i];
-		}
+		cout<<"deleting\n";
 		delete [] tab;
+		cout<<"deleted\n";
 	}
 }
 
@@ -55,6 +52,7 @@ void Vecteur<Type>::clear()
 		tab[i] = nullptr;
 		delete tab[i];
 	}
+	size=0;
 }
 
 template <typename Type>
@@ -69,6 +67,7 @@ Type* Vecteur<Type>::remove(int index)
 	{
 		tab[i] = tab[i+1];
 	}
+	size--;
 	return out;
 }
 

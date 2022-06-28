@@ -12,7 +12,6 @@
 
 Forme::Forme(int x1, int y1)
 {
-	std::cout<<"inForme\n";
   ancrage.x = x1;
   ancrage.y = y1;
 }

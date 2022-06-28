@@ -89,7 +89,6 @@ bool Couche::Reinitialiser()
 	
 void Couche::AfficherContenu(ostream & s)
 {
-	s<<"inAfficherContenu\n";
 	if(IsEmpty)
 	{
 		s <<"Couche initialisee\n";
@@ -100,10 +99,9 @@ void Couche::AfficherContenu(ostream & s)
 	}
 	else
 	{ 
-		s<<"inAfficherContenuELSE\n";
 		nForme.afficher(s);
 			
-		}
 	}
+}
 
 

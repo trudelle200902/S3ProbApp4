@@ -1,0 +1,500 @@
+
+/////////////////////////////////
+DEBUT DU TEST APPLICATION CAS 01
+/////////////////////////////////
+Etape1: Activation de la couche 3
+/////////////////////////////////
+Etape2: Ajout des 3 formes a la couche 3
+/////////////////////////////////
+Rectancle 1,2,3,4 ajoute
+Carre 1,2,3 ajoute
+Cercle 0,0,1 ajoute
+Etape3: Activation de la couche 1
+/////////////////////////////////
+Etape4: Ajout d'une formee a la couche 1
+/////////////////////////////////
+Cercle 0,4,5 ajoute
+
+Etape5:Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Cercle(x=0, y=4, r=5, aire=78.5)
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Rectangle(x=1, y=2, l=4, h=3, aire=12)
+Carre(x=1, y=2, c=3, aire=9)
+Cercle(x=0, y=0, r=1, aire=3.14)
+----- Couche 4
+Couche initialisee
+
+Etape6:Afficher l'aire du canevas
+/////////////////////////////////
+Aire du canevas=102.64
+
+Etape7: Afficher les etats des couches
+/////////////////////////////////
+Etat couche(0)= Inactive
+Etat couche(1)= Active
+Etat couche(2)= Initialisee
+Etat couche(3)= Inactive
+Etat couche(4)= Initialisee
+Etape8: Activation de la couche 3
+/////////////////////////////////
+Etape9: Translation sur la couche 3 (3,1)
+/////////////////////////////////
+
+Etape10: Activation de la couche 1
+/////////////////////////////////
+Etape11: Retrait de la forme de la couche 1
+/////////////////////////////////
+Etape12: Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche vide
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Rectangle(x=4, y=3, l=4, h=3, aire=12)
+Carre(x=4, y=3, c=3, aire=9)
+Cercle(x=3, y=1, r=1, aire=3.14)
+----- Couche 4
+Couche initialisee
+
+Etape13: Activation de la couche 5, cela est impossible
+ La couche 4, soit la derniere couche, sera activee
+/////////////////////////////////
+Etape14: Afficher les etats des couches
+/////////////////////////////////
+Etat couche(0)= Inactive
+Etat couche(1)= Inactive
+Etat couche(2)= Initialisee
+Etat couche(3)= Inactive
+Etat couche(4)= Active
+Etape15: Activation de la couche -1, cela est impossible
+ La couche 0, soit la premiere couche, sera activee
+/////////////////////////////////
+Etape16: Afficher les etats des couches
+/////////////////////////////////
+Etat couche(0)= Active
+Etat couche(1)= Inactive
+Etat couche(2)= Initialisee
+Etat couche(3)= Inactive
+Etat couche(4)= Inactive
+Etape17:Reinitialisation, affichage et fin du test
+/////////////////////////////////
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+
+Fin du Test
+
+
+/////////////////////////////////
+DEBUT DU TEST APPLICATION CAS 02
+/////////////////////////////////
+Etape1: Activation de la couche 4
+/////////////////////////////////
+Etape2: Ajout des 4 formes a la couche 4
+/////////////////////////////////
+Rectancle 5,6,7,8 ajoute
+Carre 6,6,2 ajoute
+Cercle 7,6,5 ajoute
+Cercle 8,6,2 ajoute
+Etape3: Activation de la couche 0
+/////////////////////////////////
+Etape4: Ajout d'une formee a la couche 0
+/////////////////////////////////
+Cercle 0,0,1 ajoute
+
+Etape5:Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Cercle(x=0, y=0, r=1, aire=3.14)
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Rectangle(x=5, y=6, l=8, h=7, aire=56)
+Carre(x=6, y=6, c=2, aire=4)
+Cercle(x=7, y=6, r=5, aire=78.5)
+Cercle(x=8, y=6, r=2, aire=12.56)
+
+Etape6:Afficher l'aire du canevas
+/////////////////////////////////
+Aire du canevas=154.2
+
+Etape7: Afficher les etats des couches
+/////////////////////////////////
+Etat couche(0)= Active
+Etat couche(1)= Initialisee
+Etat couche(2)= Initialisee
+Etat couche(3)= Initialisee
+Etat couche(4)= Inactive
+Etape8: Activation de la couche 4
+/////////////////////////////////
+Etape9: Translation sur la couche 3 (-2,-2)
+/////////////////////////////////
+
+Etape10: Activation de la couche 0
+/////////////////////////////////
+Etape11: Retrait de la forme de la couche 1
+/////////////////////////////////
+Etape12: Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Couche vide
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Rectangle(x=3, y=4, l=8, h=7, aire=56)
+Carre(x=4, y=4, c=2, aire=4)
+Cercle(x=5, y=4, r=5, aire=78.5)
+Cercle(x=6, y=4, r=2, aire=12.56)
+
+Etape13: Translation sur la couche 0 (1,1) 
+**Cette etape devrait resulter en une erreur car couche vide
+/////////////////////////////////
+Erreur:Translation impossible. La couche est vide
+
+Etape14: Retrait d'une forme de la couche vide 0
+**Ceci devrait resulter en une erreur
+/////////////////////////////////
+Erreur. Il n'y a aucune forme a retirer
+Etape17:Reinitialisation, affichage et fin du test
+/////////////////////////////////
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+
+Fin du Test
+
+Etape1: Activation de la couche 1
+/////////////////////////////////
+Etape2: Ajout des 3 formes a la couche 1
+/////////////////////////////////
+Rectancle 0,0,2,3 ajoute
+Carre 2,3,4 ajoute
+Cercle 7,8,6 ajoute
+Etape3: Activation de la couche 2
+/////////////////////////////////
+Etape4: Ajout d'une formee a la couche 2
+/////////////////////////////////
+Rectancle 0,0,4,5 ajoute
+
+Etape5:Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Rectangle(x=0, y=0, l=3, h=2, aire=6)
+Carre(x=2, y=3, c=4, aire=16)
+Cercle(x=7, y=8, r=6, aire=113.04)
+----- Couche 2
+Rectangle(x=0, y=0, l=5, h=4, aire=20)
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+
+Etape6:Afficher l'aire du canevas
+/////////////////////////////////
+Aire du canevas=155.04
+
+Etape7: Activation de la couche 0
+/////////////////////////////////
+SousEtape7a: Ajout des 3 formes a la couche 0
+/////////////////////////////////
+Rectancle 0,0,1,1 ajoute
+Carre 0,0,1 ajoute
+Cercle 0,0,1 ajoute
+Affichage du contenu des couches
+----- Couche 0
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Carre(x=0, y=0, c=1, aire=1)
+Cercle(x=0, y=0, r=1, aire=3.14)
+----- Couche 1
+Rectangle(x=0, y=0, l=3, h=2, aire=6)
+Carre(x=2, y=3, c=4, aire=16)
+Cercle(x=7, y=8, r=6, aire=113.04)
+----- Couche 2
+Rectangle(x=0, y=0, l=5, h=4, aire=20)
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+
+Etape8: Activation de la couche 1
+/////////////////////////////////
+SousEtape8b: Translation sur la couche 1 (5,5)
+/////////////////////////////////
+
+Etape9: Reinitialisation et Etat de la couche 2
+/////////////////////////////////
+couche 2: Initialisee
+
+Etape10: Etat de la couche 3
+/////////////////////////////////
+couche 3: Initialisee
+
+Etape11: Etat de la couche 4
+/////////////////////////////////
+couche 4: Initialisee
+
+Etape12:Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Carre(x=0, y=0, c=1, aire=1)
+Cercle(x=0, y=0, r=1, aire=3.14)
+----- Couche 1
+Rectangle(x=5, y=5, l=3, h=2, aire=6)
+Carre(x=7, y=8, c=4, aire=16)
+Cercle(x=12, y=13, r=6, aire=113.04)
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+
+Etape13: Afficher l'aire du canevas
+/////////////////////////////////
+Aire du canevas=140.18
+
+Etape14: Retrait de la 1ere forme de la couche 1
+/////////////////////////////////
+Etape15: Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Carre(x=0, y=0, c=1, aire=1)
+Cercle(x=0, y=0, r=1, aire=3.14)
+----- Couche 1
+Carre(x=7, y=8, c=4, aire=16)
+Cercle(x=12, y=13, r=6, aire=113.04)
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+
+Etape16: Afficher l'aire du canevas
+/////////////////////////////////
+Aire du canevas=134.18
+
+Etape17: Reinitialisation du canevas
+/////////////////////////////////
+Etape18: Afficher le canevas
+/////////////////////////////////
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+
+Etape19: Afficher l'aire du canevas
+/////////////////////////////////
+Aire du canevas=0
+
+Test Rectangle1:
+---------------------
++Rectangle(8,2,3,4)
+Rectangle(x=8, y=2, l=4, h=3, aire=12)
++Redimensionne a (5,3)
+Rectangle(x=8, y=2, l=3, h=5, aire=15)
+
+Test Rectangle2:
+---------------------
++Rectangle
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+
+Test Cercle1:
+---------------------
++Cercle(6,11,3)
+Cercle(x=6, y=11, r=3, aire=28.26)
++Redimensionne a 5
+Cercle(x=6, y=11, r=5, aire=78.5)
+
+Test Cercle2:
+---------------------
++Cercle
+Cercle(x=0, y=0, r=1, aire=3.14)
+
+Test Carre1:
+---------------------
++Carre(7,1,2)
+Carre(x=7, y=1, c=2, aire=4)
++Redimensionne a (6)
+Carre(x=7, y=1, c=6, aire=36)
+
+Test Carre2:
+---------------------
++Carre
+Carre(x=0, y=0, c=1, aire=1)
+
+Test Forme1:
+---------------------
++Rectangle(1,2,4,6)
+Ancrage: (1,2)
++Translater de (5,5)
+Ancrage: (6,7)
++setAncrage a (1,1) avec coordonnee {1,1}
+Ancrage: (1,1)
+Test Couche1:
+---------------------
++Pointeur Rectangle(0,0,3,6)
++Pointeur Rectangle(2,1,4,1)
+//Activation de la couche
+//Ajout de la forme
+//Affichage de l'aire
+Aire Couche= 22
+//Affichage du contenu de la couche avec les 2 formes
+Rectangle(x=0, y=0, l=6, h=3, aire=18)
+Rectangle(x=2, y=1, l=1, h=4, aire=4)
+-Pointeur Rectangle(0,0,3,6)
+//Affichage du contenu de la couche avec 1 forme restante
+Rectangle(x=2, y=1, l=1, h=4, aire=4)
+-Pointeur Rectangle(2,1,4,1)
+//Affichage du contenu de la couche vide
+Couche vide
+//Reinitialisation
+//Affichage du contenu de la couche reinitialisee
+Couche initialisee
+Test Couche2:
+---------------------
++Pointeur Carre(0,0,4)
+//Activation de la couche
+//Ajout de la forme
+//Affichage du contenu de la couche avec la forme
+Carre(x=0, y=0, c=4, aire=16)
+//Translation (2,2)
+//Affichage du contenu de la couche avec la forme
+Carre(x=5, y=5, c=4, aire=16)
+//Inactivation de la couche
+-Pointeur Carre(0,0,4) **Devrait retourner une erreur**
+Erreur, la couche est Inactive. Retrait impossible
+//Affichage du contenu de la couche avec la forme
+Carre(x=5, y=5, c=4, aire=16)
+//Reinitialisation
+
+TEST UNITAIRE VECTEUR
+---------------------------------
+Vecteur1 creer avec succes
+capacity: 10
+size: 0
+
+Commece a ajouter 11 forme de le vecteur
+Fin de l'ajout des 11 formes
+capacity: 20
+size: 11
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+
+modification de la forme a l'index 4:
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=3, y=4, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+
+retirer la forme qui a ete modifier et la detruire:
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+Rectangle(x=0, y=0, l=1, h=1, aire=1)
+capacity: 20
+size: 10
+
+vider le vecteur:
+capacity: 10
+size: 0
+affichage du vecteur:
+fin d'affichage du vecteur:
+Test Canevas1:
+---------------------
+Creation d'une couche
+Affichage de la couche
+----- Couche 0
+Couche initialisee
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+Etats des couches
+Etat couche(0)= Active
+Etat couche(1)= Initialisee
+Etat couche(2)= Initialisee
+Etat couche(3)= Initialisee
+Etat couche(4)= Initialisee
+
+//Activation de la couche 1
+Etats des couches
+Etat couche(0)= Inactive
+Etat couche(1)= Active
+Etat couche(2)= Initialisee
+Etat couche(3)= Initialisee
+Etat couche(4)= Initialisee
+
+//Reinitialisation
+Etat couche(0)= Active
+Etat couche(1)= Initialisee
+Etat couche(2)= Initialisee
+Etat couche(3)= Initialisee
+Etat couche(4)= Initialisee

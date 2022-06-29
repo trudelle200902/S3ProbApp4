@@ -764,20 +764,12 @@ void Tests::tests_application_cas_01()
 	cout<<"/////////////////////////////////"<<endl;
 	canevasA1.afficher(cout);
 	cout<<"\n";
-	//Etape13: Translation sur la couche 1
-	cout<<"Etape13: Translation sur la couche 1 (1,1) \n**Cette etape devrait resulter en une erreur"<<endl;
-	cout<<"/////////////////////////////////"<<endl;
-	if(canevasA1.translater(3,1)==false)
-	{
-		cout<<"Erreur:Translation impossible. La couche est vide\n";
-		cout<<"\n";
-	}
-	//Etape14: Activer la couche 5, impossible, la couche 4 sera activee
-	cout<<"Etape14: Activation de la couche 5, cela est impossible\n La couche 4, soit la derniere couche, sera activee"<<endl;
+	//Etape13: Activer la couche 5, impossible, la couche 4 sera activee
+	cout<<"Etape13: Activation de la couche 5, cela est impossible\n La couche 4, soit la derniere couche, sera activee"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
 	canevasA1.activerCouche(5);
-	//Etape15: Afficher les etats des couches
-	cout<<"Etape15: Afficher les etats des couches"<<endl;
+	//Etape14: Afficher les etats des couches
+	cout<<"Etape14: Afficher les etats des couches"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
 	cout<<"Etat couche(0)= ";
 	switch(canevasA1.getCouche(0)->Etat)
@@ -854,12 +846,12 @@ void Tests::tests_application_cas_01()
 		cout<<"Inactive\n";
 		break;
 	}
-	//Etape16: Activer la couche -1, impossible, la couche 0 sera activee
-	cout<<"Etape16: Activation de la couche -1, cela est impossible\n La couche 0, soit la premiere couche, sera activee"<<endl;
+	//Etape15: Activer la couche -1, impossible, la couche 0 sera activee
+	cout<<"Etape15: Activation de la couche -1, cela est impossible\n La couche 0, soit la premiere couche, sera activee"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
 	canevasA1.activerCouche(-1);
-	//Etape17: Afficher les etats des couches
-	cout<<"Etape17: Afficher les etats des couches"<<endl;
+	//Etape16: Afficher les etats des couches
+	cout<<"Etape16: Afficher les etats des couches"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
 	cout<<"Etat couche(0)= ";
 	switch(canevasA1.getCouche(0)->Etat)
@@ -936,15 +928,8 @@ void Tests::tests_application_cas_01()
 		cout<<"Inactive\n";
 		break;
 	}
-	//Etape18: Retirer une forme de la couche 1, impossible, aucune forme
-	cout<<"Etape18: Retrait d'une forme de la couche vide 1\n**Ceci devrait resulter en une erreur"<<endl;
-	cout<<"/////////////////////////////////"<<endl;
-	if(!canevasA1.retirerForme(0))
-	{
-		cout<<"Erreur. Il n'y a aucune forme a retirer\n";
-	}
-	//Etape19:Reinitialisation, affichage et fin du test
-	cout<<"Etape19:Reinitialisation, affichage et fin du test\n";
+	//Etape17:Reinitialisation, affichage et fin du test
+	cout<<"Etape17:Reinitialisation, affichage et fin du test\n";
 	cout<<"/////////////////////////////////"<<endl;
 	canevasA1.reinitialiser();
 	canevasA1.afficher(cout);
@@ -958,48 +943,51 @@ void Tests::tests_application_cas_02()
 	cout<<"/////////////////////////////////"<<endl;
    //Creation d'un canevas
 	Canevas canevasA2;
-	//Etape1: Activer la couche 3 du canevas
-	cout<<"Etape1: Activation de la couche 3"<<endl;
+	//Etape1: Activer la couche 4 du canevas
+	cout<<"Etape1: Activation de la couche 4"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.activerCouche(3);
-	//Etape2: Ajout des 3 formes dans la couche 3
-	cout<<"Etape2: Ajout des 3 formes a la couche 3"<<endl;
+	canevasA2.activerCouche(4);
+	//Etape2: Ajout des 4 formes dans la couche 4
+	cout<<"Etape2: Ajout des 4 formes a la couche 4"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	Forme* r1=new Rectangle(1,2,3,4);
-	canevasA1.ajouterForme(r1);
-	cout<<"Rectancle 1,2,3,4 ajoute\n";
-	Forme* s1= new Carre(1,2,3);
-	canevasA1.ajouterForme(s1);
-	cout<<"Carre 1,2,3 ajoute\n";
-	Forme* c1= new Cercle;
-	canevasA1.ajouterForme(c1);
-	cout<<"Cercle 0,0,1 ajoute\n";
-	//Etape3: Activer la couche 1 du canevas
-	cout<<"Etape3: Activation de la couche 1"<<endl;
+	Forme* r1=new Rectangle(5,6,7,8);
+	canevasA2.ajouterForme(r1);
+	cout<<"Rectancle 5,6,7,8 ajoute\n";
+	Forme* s1= new Carre(6,6,2);
+	canevasA2.ajouterForme(s1);
+	cout<<"Carre 6,6,2 ajoute\n";
+	Forme* c1= new Cercle(7,6,5);
+	canevasA2.ajouterForme(c1);
+	cout<<"Cercle 7,6,5 ajoute\n";
+	Forme* c2= new Cercle(8,6,2);
+	canevasA2.ajouterForme(c2);
+	cout<<"Cercle 8,6,2 ajoute\n";
+	//Etape3: Activer la couche 0 du canevas
+	cout<<"Etape3: Activation de la couche 0"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.activerCouche(1);
-	//Etape4: Ajout d'une forme dans la couche 1
-	cout<<"Etape4: Ajout d'une formee a la couche 1"<<endl;
+	canevasA2.activerCouche(0);
+	//Etape4: Ajout d'une forme dans la couche 0
+	cout<<"Etape4: Ajout d'une formee a la couche 0"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	Forme* c2= new Cercle(0,4,5);
-	canevasA1.ajouterForme(c2);
-	cout<<"Cercle 0,4,5 ajoute"<<endl;
+	Forme* c3= new Cercle;
+	canevasA2.ajouterForme(c3);
+	cout<<"Cercle 0,0,1 ajoute"<<endl;
 	cout<<"\n";
 	//Etape5: Afficher le canevas
 	cout<<"Etape5:Afficher le canevas"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.afficher(cout);
+	canevasA2.afficher(cout);
 	cout<<"\n";
 	//Etape6: Afficher l'aire totale du canevas
 	cout<<"Etape6:Afficher l'aire du canevas"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	cout<<"Aire du canevas="<<canevasA1.aire()<<endl;
+	cout<<"Aire du canevas="<<canevasA2.aire()<<endl;
 	cout<<"\n";
 	//Etape7: Afficher les etats des couches
 	cout<<"Etape7: Afficher les etats des couches"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
 	cout<<"Etat couche(0)= ";
-	switch(canevasA1.getCouche(0)->Etat)
+	switch(canevasA2.getCouche(0)->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";
@@ -1014,7 +1002,7 @@ void Tests::tests_application_cas_02()
 		break;
 	}
 	cout<<"Etat couche(1)= ";
-	switch(canevasA1.getCouche(1)->Etat)
+	switch(canevasA2.getCouche(1)->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";
@@ -1029,7 +1017,7 @@ void Tests::tests_application_cas_02()
 		break;
 	}
 	cout<<"Etat couche(2)= ";
-	switch(canevasA1.getCouche(2)->Etat)
+	switch(canevasA2.getCouche(2)->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";
@@ -1044,7 +1032,7 @@ void Tests::tests_application_cas_02()
 		break;
 	}
 	cout<<"Etat couche(3)= ";
-	switch(canevasA1.getCouche(3)->Etat)
+	switch(canevasA2.getCouche(3)->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";
@@ -1059,7 +1047,7 @@ void Tests::tests_application_cas_02()
 		break;
 	}
 	cout<<"Etat couche(4)= ";
-	switch(canevasA1.getCouche(4)->Etat)
+	switch(canevasA2.getCouche(4)->Etat)
 	{
 	case Initialisee:
 		cout<<"Initialisee\n";
@@ -1073,35 +1061,47 @@ void Tests::tests_application_cas_02()
 		cout<<"Inactive\n";
 		break;
 	}
-	//Etape8: Activer la couche 3 du canevas
-	cout<<"Etape8: Activation de la couche 3"<<endl;
+	//Etape8: Activer la couche 4 du canevas
+	cout<<"Etape8: Activation de la couche 4"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.activerCouche(3);
-	//Etape9: Translation sur la couche 3 de x=3 et y=1
-	cout<<"Etape9: Translation sur la couche 3 (3,1)"<<endl;
+	canevasA2.activerCouche(4);
+	//Etape9: Translation sur la couche 4 de x=-2 et y=-2
+	cout<<"Etape9: Translation sur la couche 3 (-2,-2)"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.translater(3,1);
+	canevasA2.translater(-2,-2);
 	cout<<"\n";
-	//Etape10: Activer la couche 1 du canevas
-	cout<<"Etape10: Activation de la couche 1"<<endl;
+	//Etape10: Activer la couche 0 du canevas
+	cout<<"Etape10: Activation de la couche 0"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.activerCouche(1);
-	//Etape11: Retirer la forme de la couche 1
+	canevasA2.activerCouche(0);
+	//Etape11: Retirer la forme de la couche 0
 	cout<<"Etape11: Retrait de la forme de la couche 1"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.retirerForme(0);
+	canevasA2.retirerForme(0);
 	//Etape12: Afficher le canevas
 	cout<<"Etape12: Afficher le canevas"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	canevasA1.afficher(cout);
+	canevasA2.afficher(cout);
 	cout<<"\n";
-	//Etape13: Translation sur la couche 1
-	cout<<"Etape13: Translation sur la couche 1 (1,1) \n**Cette etape devrait resulter en une erreur"<<endl;
+	//Etape13: Translation sur la couche 0
+	cout<<"Etape13: Translation sur la couche 0 (1,1) \n**Cette etape devrait resulter en une erreur car couche vide"<<endl;
 	cout<<"/////////////////////////////////"<<endl;
-	if(canevasA1.translater(3,1)==false)
+	if(canevasA2.translater(1,1)==false)
 	{
 		cout<<"Erreur:Translation impossible. La couche est vide\n";
 		cout<<"\n";
 	} 
-   
+  //Etape14: Retirer une forme de la couche 0, impossible, aucune forme
+	cout<<"Etape14: Retrait d'une forme de la couche vide 0\n**Ceci devrait resulter en une erreur"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	if(!canevasA2.retirerForme(0))
+	{
+		cout<<"Erreur. Il n'y a aucune forme a retirer\n";
+	}
+		//Etape17:Reinitialisation, affichage et fin du test
+	cout<<"Etape17:Reinitialisation, affichage et fin du test\n";
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA2.reinitialiser();
+	canevasA2.afficher(cout);
+	cout<<"\nFin du Test\n\n";
 }

@@ -1,3 +1,10 @@
+/********
+ * Fichier: Vecteur.h
+* Auteurs: couj0902-trum1304
+ * Date: 28 juin 2022 (derniere modification)
+ * Description: Declaration de la classe Vecteur de Graphicus-02.
+********/
+
 #ifndef VECTEUR_H
 #define VECTEUR_H
 

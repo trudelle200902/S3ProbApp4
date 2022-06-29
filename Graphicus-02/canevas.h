@@ -1,10 +1,9 @@
 /********
  * Fichier: canevas.h
- * Auteurs: C.-A. Brunet
- * Date: 08 janvier 2018 (creation)
+* Auteurs: couj0902-trum1304
+ * Date: 28 juin 2022 (derniere modification)
  * Description: Declaration de la classe Canevas. La classe gere un
- *    tableau de couches en accord avec les specifications de Graphicus.
- *    Ce fichier fait partie de la distribution de Graphicus.
+ *    tableau de couches en accord avec les specifications de Graphicus-02.
 ********/
 
 #ifndef DESSIN_H
@@ -36,6 +35,7 @@ public:
    bool translater(int deltaX, int deltaY);
    void afficher(ostream & s);
    Couche* getCouche(int index);
+   
 
 private:
      Couche couches[MAX_COUCHES];

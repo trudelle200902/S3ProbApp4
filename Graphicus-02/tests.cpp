@@ -1,10 +1,9 @@
 /********
  * Fichier: tests.cpp
- * Auteurs: C.-A. Brunet
- * Date: 08 janvier 2018 (creation)
+* Auteurs: couj0902-trum1304
+ * Date: 28 juin 2022 (derniere modification)
  * Description: Implementation des methodes des classes decrites dans
- *    tests.h.  Ce fichier peut etre adapte a vos besoins de tests. 
- *    Ce fichier fait partie de la distribution de Graphicus.
+ *    tests.h.
 ********/
 
 #include "tests.h"
@@ -15,11 +14,11 @@ void Tests::tests_validation()
 	Canevas canevas;
 	//Etape1: Activer la couche 1 du canevas
 	cout<<"Etape1: Activation de la couche 1"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.activerCouche(1);
 	//Etape2: Ajout des 3 formes dans la couche 1
 	cout<<"Etape2: Ajout des 3 formes a la couche 1"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	Forme* r1=new Rectangle(0,0,2,3);
 	canevas.ajouterForme(r1);
 	cout<<"Rectancle 0,0,2,3 ajoute\n";
@@ -29,34 +28,34 @@ void Tests::tests_validation()
 	Forme* c1= new Cercle(7,8,6);
 	canevas.ajouterForme(c1);
 	cout<<"Cercle 7,8,6 ajoute\n";
-	//Etape3: Activer la couche 1 du canevas
+	//Etape3: Activer la couche 2 du canevas
 	cout<<"Etape3: Activation de la couche 2"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.activerCouche(2);
 	//Etape4: Ajout d'une forme dans la couche 2
 	cout<<"Etape4: Ajout d'une formee a la couche 2"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	Forme* r2= new Rectangle(0,0,4,5);
 	canevas.ajouterForme(r2);
 	cout<<"Rectancle 0,0,4,5 ajoute"<<endl;
 	cout<<"\n";
 	//Etape5: Afficher le canevas
 	cout<<"Etape5:Afficher le canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.afficher(cout);
 	cout<<"\n";
 	//Etape6: Afficher l'aire totale du canevas
 	cout<<"Etape6:Afficher l'aire du canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	cout<<"Aire du canevas="<<canevas.aire()<<endl;
 	cout<<"\n";
 	//Etape7: Activer la couche 0 du canevas
 	cout<<"Etape7: Activation de la couche 0"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.activerCouche(0);
 		//SousEtape7a: Ajout de 3 formes a la couche 0
 		cout<<"SousEtape7a: Ajout des 3 formes a la couche 0"<<endl;
-		cout<<"---------------------------------"<<endl;
+		cout<<"/////////////////////////////////"<<endl;
 		Forme* r3= new Rectangle;
 		canevas.ajouterForme(r3);
 		cout<<"Rectancle 0,0,1,1 ajoute"<<endl;
@@ -71,16 +70,16 @@ void Tests::tests_validation()
 		cout<<"\n";
 	//Etape8: Activer la couche 1 du canevas
 	cout<<"Etape8: Activation de la couche 1"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.activerCouche(1);
 		//SousEtape8a: Translation sur la couche 1 de x=5 et y=5
 		cout<<"SousEtape8b: Translation sur la couche 1 (5,5)"<<endl;
-		cout<<"---------------------------------"<<endl;
+		cout<<"/////////////////////////////////"<<endl;
 		canevas.translater(5,5);
 		cout<<"\n";
 	//Etape9: Etat de la couche 2
 	cout<<"Etape9: Reinitialisation et Etat de la couche 2"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	cout<<"couche 2: ";
 	canevas.getCouche(2)->Reinitialiser();
 	Couche* interm=canevas.getCouche(2);
@@ -102,7 +101,7 @@ void Tests::tests_validation()
 	cout<<"\n";
 	//Etape10: Etat de la couche 3
 	cout<<"Etape10: Etat de la couche 3"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	cout<<"couche 3: ";
 	interm=canevas.getCouche(3);
 	switch(interm->Etat)
@@ -122,7 +121,7 @@ void Tests::tests_validation()
 	cout<<"\n";
 	//Etape11: Etat de la couche 4
 	cout<<"Etape11: Etat de la couche 4"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	cout<<"couche 4: ";
 	interm=canevas.getCouche(4);
 	switch(interm->Etat)
@@ -142,40 +141,41 @@ void Tests::tests_validation()
 	cout<<"\n";
 	//Etape12: Afficher le canevas
 	cout<<"Etape12:Afficher le canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.afficher(cout);
 	cout<<"\n";
 	//Etape13: Afficher l'aire totale du canevas
 	cout<<"Etape13: Afficher l'aire du canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	cout<<"Aire du canevas="<<canevas.aire()<<endl;
 	cout<<"\n";
 	//Etape14: Retirer 1ere forme de la couche 1
 	cout<<"Etape14: Retrait de la 1ere forme de la couche 1"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.retirerForme(0);
 	//Etape15: Afficher le canevas
 	cout<<"Etape15: Afficher le canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.afficher(cout);
 	cout<<"\n";
 	//Etape16: Afficher l'aire totale du canevas
 	cout<<"Etape16: Afficher l'aire du canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	cout<<"Aire du canevas="<<canevas.aire()<<endl;
 	cout<<"\n";
 	//Etape17: Reinitialisation du canevas
 	cout<<"Etape17: Reinitialisation du canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevas.reinitialiser();
 	canevas.reinitialiser();
 	//Etape18: Afficher le canevas
 	cout<<"Etape18: Afficher le canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	canevas.afficher(cout);
 	cout<<"\n";
 	//Etape19: Afficher l'aire totale du canevas
 	cout<<"Etape19: Afficher l'aire du canevas"<<endl;
-	cout<<"---------------------------------"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
 	cout<<"Aire du canevas="<<canevas.aire()<<endl;
 	cout<<"\n";
 	
@@ -183,12 +183,288 @@ void Tests::tests_validation()
 
 void Tests::tests_unitaires_vecteur()
 {
-   // Tests sur la classe Vecteur
+	cout<<"\n";
+	cout<<"TEST UNITAIRE VECTEUR\n";
+	cout<<"---------------------------------"<<endl;
+	Vecteur<Forme> vecteur1;
+	cout<<"Vecteur1 creer avec succes\n";
+	cout<<"capacity: "<<vecteur1.getCapacity()<<endl;
+	cout<<"size: "<<vecteur1.getSize()<<endl;
+	cout<<"\n";
+	cout<<"Commece a ajouter 11 forme de le vecteur\n";
+	for(int i = 0; i<11;i++)
+	{
+		vecteur1.insert(new Rectangle);
+	}
+	cout<<"Fin de l'ajout des 11 formes\n";
+	cout<<"capacity: "<<vecteur1.getCapacity()<<endl;
+	cout<<"size: "<<vecteur1.getSize()<<endl;
+	vecteur1.afficher(cout);
+	cout<<"\n";
+	cout<<"modification de la forme a l'index 4:\n";
+	vecteur1.getElementAt(4)->translater(3,4);
+	vecteur1.afficher(cout);
+	cout<<"\n";
+	cout<<"retirer la forme qui a ete modifier et la detruire:\n";
+	Forme* formeIndex4 = vecteur1.remove(4);
+	delete formeIndex4;
+	vecteur1.afficher(cout);
+	cout<<"capacity: "<<vecteur1.getCapacity()<<endl;
+	cout<<"size: "<<vecteur1.getSize()<<endl;
+	cout<<"\n";
+	cout<<"vider le vecteur:\n";
+	vecteur1.clear();
+	cout<<"capacity: "<<vecteur1.getCapacity()<<endl;
+	cout<<"size: "<<vecteur1.getSize()<<endl;
+	cout<<"affichage du vecteur:\n";
+	vecteur1.afficher(cout);
+	cout<<"fin d'affichage du vecteur:\n";
 }
 
 void Tests::tests_unitaires_canevas()
 {
-   // Tests sur la classe Canevas
+   cout<<"Test Canevas1:\n";
+	cout<<"---------------------\n";
+	cout<<"Creation d'une couche\n";
+	Canevas canevasTest;
+	cout<<"Affichage de la couche\n";
+	canevasTest.afficher(cout);
+	cout<<"Etats des couches\n";
+	cout<<"Etat couche(0)= ";
+	switch(canevasTest.getCouche(0)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(1)= ";
+	switch(canevasTest.getCouche(1)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(2)= ";
+	switch(canevasTest.getCouche(2)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(3)= ";
+	switch(canevasTest.getCouche(3)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(4)= ";
+	switch(canevasTest.getCouche(4)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"\n//Activation de la couche 1\n";
+	canevasTest.activerCouche(1);
+	cout<<"Etats des couches\n";
+		cout<<"Etat couche(0)= ";
+	switch(canevasTest.getCouche(0)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(1)= ";
+	switch(canevasTest.getCouche(1)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(2)= ";
+	switch(canevasTest.getCouche(2)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(3)= ";
+	switch(canevasTest.getCouche(3)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(4)= ";
+	switch(canevasTest.getCouche(4)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"\n//Reinitialisation\n";
+	canevasTest.reinitialiser();
+		cout<<"Etat couche(0)= ";
+	switch(canevasTest.getCouche(0)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(1)= ";
+	switch(canevasTest.getCouche(1)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(2)= ";
+	switch(canevasTest.getCouche(2)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(3)= ";
+	switch(canevasTest.getCouche(3)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(4)= ";
+	switch(canevasTest.getCouche(4)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	/*Les autres fonctionnalites de Canevas sont testees dans
+	tests_validation() et tests_application() car se sont des
+	fonctionnalitees qui englobent une majorite du code. Des
+	tests unitaires de ces fonctionnalites seraient inutiles.
+	*/
 }
 
 void Tests::tests_unitaires_couche()
@@ -346,12 +622,486 @@ void Tests::tests_application()
 
 void Tests::tests_application_cas_01()
 {
-   cout << "TESTS APPLICATION (CAS 01)" << endl; 
-   // Il faut ajouter les operations realisant ce scenario de test.
+  cout<<"\n/////////////////////////////////"<<endl;
+	cout<<"DEBUT DU TEST APPLICATION CAS 01\n";
+	cout<<"/////////////////////////////////"<<endl;
+   //Creation d'un canevas
+	Canevas canevasA1;
+	//Etape1: Activer la couche 3 du canevas
+	cout<<"Etape1: Activation de la couche 3"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(3);
+	//Etape2: Ajout des 3 formes dans la couche 3
+	cout<<"Etape2: Ajout des 3 formes a la couche 3"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	Forme* r1=new Rectangle(1,2,3,4);
+	canevasA1.ajouterForme(r1);
+	cout<<"Rectancle 1,2,3,4 ajoute\n";
+	Forme* s1= new Carre(1,2,3);
+	canevasA1.ajouterForme(s1);
+	cout<<"Carre 1,2,3 ajoute\n";
+	Forme* c1= new Cercle;
+	canevasA1.ajouterForme(c1);
+	cout<<"Cercle 0,0,1 ajoute\n";
+	//Etape3: Activer la couche 1 du canevas
+	cout<<"Etape3: Activation de la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(1);
+	//Etape4: Ajout d'une forme dans la couche 1
+	cout<<"Etape4: Ajout d'une formee a la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	Forme* c2= new Cercle(0,4,5);
+	canevasA1.ajouterForme(c2);
+	cout<<"Cercle 0,4,5 ajoute"<<endl;
+	cout<<"\n";
+	//Etape5: Afficher le canevas
+	cout<<"Etape5:Afficher le canevas"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.afficher(cout);
+	cout<<"\n";
+	//Etape6: Afficher l'aire totale du canevas
+	cout<<"Etape6:Afficher l'aire du canevas"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	cout<<"Aire du canevas="<<canevasA1.aire()<<endl;
+	cout<<"\n";
+	//Etape7: Afficher les etats des couches
+	cout<<"Etape7: Afficher les etats des couches"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	cout<<"Etat couche(0)= ";
+	switch(canevasA1.getCouche(0)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(1)= ";
+	switch(canevasA1.getCouche(1)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(2)= ";
+	switch(canevasA1.getCouche(2)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(3)= ";
+	switch(canevasA1.getCouche(3)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(4)= ";
+	switch(canevasA1.getCouche(4)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	//Etape8: Activer la couche 3 du canevas
+	cout<<"Etape8: Activation de la couche 3"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(3);
+	//Etape9: Translation sur la couche 3 de x=3 et y=1
+	cout<<"Etape9: Translation sur la couche 3 (3,1)"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.translater(3,1);
+	cout<<"\n";
+	//Etape10: Activer la couche 1 du canevas
+	cout<<"Etape10: Activation de la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(1);
+	//Etape11: Retirer la forme de la couche 1
+	cout<<"Etape11: Retrait de la forme de la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.retirerForme(0);
+	//Etape12: Afficher le canevas
+	cout<<"Etape12: Afficher le canevas"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.afficher(cout);
+	cout<<"\n";
+	//Etape13: Translation sur la couche 1
+	cout<<"Etape13: Translation sur la couche 1 (1,1) \n**Cette etape devrait resulter en une erreur"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	if(canevasA1.translater(3,1)==false)
+	{
+		cout<<"Erreur:Translation impossible. La couche est vide\n";
+		cout<<"\n";
+	}
+	//Etape14: Activer la couche 5, impossible, la couche 4 sera activee
+	cout<<"Etape14: Activation de la couche 5, cela est impossible\n La couche 4, soit la derniere couche, sera activee"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(5);
+	//Etape15: Afficher les etats des couches
+	cout<<"Etape15: Afficher les etats des couches"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	cout<<"Etat couche(0)= ";
+	switch(canevasA1.getCouche(0)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(1)= ";
+	switch(canevasA1.getCouche(1)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(2)= ";
+	switch(canevasA1.getCouche(2)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(3)= ";
+	switch(canevasA1.getCouche(3)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(4)= ";
+	switch(canevasA1.getCouche(4)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	//Etape16: Activer la couche -1, impossible, la couche 0 sera activee
+	cout<<"Etape16: Activation de la couche -1, cela est impossible\n La couche 0, soit la premiere couche, sera activee"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(-1);
+	//Etape17: Afficher les etats des couches
+	cout<<"Etape17: Afficher les etats des couches"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	cout<<"Etat couche(0)= ";
+	switch(canevasA1.getCouche(0)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(1)= ";
+	switch(canevasA1.getCouche(1)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(2)= ";
+	switch(canevasA1.getCouche(2)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(3)= ";
+	switch(canevasA1.getCouche(3)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(4)= ";
+	switch(canevasA1.getCouche(4)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	//Etape18: Retirer une forme de la couche 1, impossible, aucune forme
+	cout<<"Etape18: Retrait d'une forme de la couche vide 1\n**Ceci devrait resulter en une erreur"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	if(!canevasA1.retirerForme(0))
+	{
+		cout<<"Erreur. Il n'y a aucune forme a retirer\n";
+	}
+	//Etape19:Reinitialisation, affichage et fin du test
+	cout<<"Etape19:Reinitialisation, affichage et fin du test\n";
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.reinitialiser();
+	canevasA1.afficher(cout);
+	cout<<"\nFin du Test\n\n";
 }
 
 void Tests::tests_application_cas_02()
 {
-   cout << "TESTS APPLICATION (CAS 02)" << endl;  
-    // Il faut ajouter les operations realisant ce scenario de test.
+     cout<<"\n/////////////////////////////////"<<endl;
+	cout<<"DEBUT DU TEST APPLICATION CAS 02\n";
+	cout<<"/////////////////////////////////"<<endl;
+   //Creation d'un canevas
+	Canevas canevasA2;
+	//Etape1: Activer la couche 3 du canevas
+	cout<<"Etape1: Activation de la couche 3"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(3);
+	//Etape2: Ajout des 3 formes dans la couche 3
+	cout<<"Etape2: Ajout des 3 formes a la couche 3"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	Forme* r1=new Rectangle(1,2,3,4);
+	canevasA1.ajouterForme(r1);
+	cout<<"Rectancle 1,2,3,4 ajoute\n";
+	Forme* s1= new Carre(1,2,3);
+	canevasA1.ajouterForme(s1);
+	cout<<"Carre 1,2,3 ajoute\n";
+	Forme* c1= new Cercle;
+	canevasA1.ajouterForme(c1);
+	cout<<"Cercle 0,0,1 ajoute\n";
+	//Etape3: Activer la couche 1 du canevas
+	cout<<"Etape3: Activation de la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(1);
+	//Etape4: Ajout d'une forme dans la couche 1
+	cout<<"Etape4: Ajout d'une formee a la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	Forme* c2= new Cercle(0,4,5);
+	canevasA1.ajouterForme(c2);
+	cout<<"Cercle 0,4,5 ajoute"<<endl;
+	cout<<"\n";
+	//Etape5: Afficher le canevas
+	cout<<"Etape5:Afficher le canevas"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.afficher(cout);
+	cout<<"\n";
+	//Etape6: Afficher l'aire totale du canevas
+	cout<<"Etape6:Afficher l'aire du canevas"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	cout<<"Aire du canevas="<<canevasA1.aire()<<endl;
+	cout<<"\n";
+	//Etape7: Afficher les etats des couches
+	cout<<"Etape7: Afficher les etats des couches"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	cout<<"Etat couche(0)= ";
+	switch(canevasA1.getCouche(0)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(1)= ";
+	switch(canevasA1.getCouche(1)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(2)= ";
+	switch(canevasA1.getCouche(2)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(3)= ";
+	switch(canevasA1.getCouche(3)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	cout<<"Etat couche(4)= ";
+	switch(canevasA1.getCouche(4)->Etat)
+	{
+	case Initialisee:
+		cout<<"Initialisee\n";
+		break;
+		
+	case Active:
+		cout<<"Active\n";
+		break;
+	
+	case Inactive:
+		cout<<"Inactive\n";
+		break;
+	}
+	//Etape8: Activer la couche 3 du canevas
+	cout<<"Etape8: Activation de la couche 3"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(3);
+	//Etape9: Translation sur la couche 3 de x=3 et y=1
+	cout<<"Etape9: Translation sur la couche 3 (3,1)"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.translater(3,1);
+	cout<<"\n";
+	//Etape10: Activer la couche 1 du canevas
+	cout<<"Etape10: Activation de la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.activerCouche(1);
+	//Etape11: Retirer la forme de la couche 1
+	cout<<"Etape11: Retrait de la forme de la couche 1"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.retirerForme(0);
+	//Etape12: Afficher le canevas
+	cout<<"Etape12: Afficher le canevas"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	canevasA1.afficher(cout);
+	cout<<"\n";
+	//Etape13: Translation sur la couche 1
+	cout<<"Etape13: Translation sur la couche 1 (1,1) \n**Cette etape devrait resulter en une erreur"<<endl;
+	cout<<"/////////////////////////////////"<<endl;
+	if(canevasA1.translater(3,1)==false)
+	{
+		cout<<"Erreur:Translation impossible. La couche est vide\n";
+		cout<<"\n";
+	} 
+   
 }

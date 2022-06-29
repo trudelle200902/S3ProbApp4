@@ -1,9 +1,9 @@
 /********
  * Fichier: couche.cpp
- * Auteurs: C.-A. Brunet
- * Date: 08 janvier 2018 (creation)
+* Auteurs: couj0902-trum1304
+ * Date: 28 juin 2022 (derniere modification)
  * Description: Implementation des methodes des classes decrites dans
- *    couche.h. Ce fichier fait partie de la distribution de Graphicus.
+ *    couche.h.
 ********/
 
 #include "couche.h"
@@ -65,14 +65,13 @@ double Couche::aire()
 
 bool Couche::Translate(int x, int y)
 {
-
+	if(nForme.getElementAt(0)==nullptr)
+	{
+		return false;
+	}
 	for(int i=0;i<(nForme.getSize());i++)
 	{
 		Forme* Element=nForme.getElementAt(i);
-		if(Element==nullptr)
-		{
-			return false;
-		}
 		Element->translater(x,y);
 	}
 	return true;

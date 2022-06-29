@@ -1,3 +1,11 @@
+/********
+ * Fichier: Vecteur.cpp
+* Auteurs: couj0902-trum1304
+ * Date: 28 juin 2022 (derniere modification)
+ * Description: Implementation des methodes des classes decrites dans
+ *    Vecteur.h.
+********/
+
 #include "Vecteur.h"
 #include "forme.h"
 

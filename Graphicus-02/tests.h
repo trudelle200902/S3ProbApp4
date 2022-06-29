@@ -1,10 +1,8 @@
 /********
  * Fichier: tests.h
- * Auteurs: C.-A. Brunet
- * Date: 08 janvier 2018 (creation)
- * Description: Declaration de la classe pour les tests de Graphicus.
- *    Ce fichier peut etre adapte a vos besoins de tests. Ce fichier
- *    fait partie de la distribution de Graphicus.
+* Auteurs: couj0902-trum1304
+ * Date: 28 juin 2022 (derniere modification)
+ * Description: Declaration de la classe pour les tests de Graphicus-02.
 ********/
 
 #include <iostream>

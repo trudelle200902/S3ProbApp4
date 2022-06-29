@@ -1,9 +1,9 @@
 /********
  * Fichier: canevas.cpp
- * Auteurs: C.-A. Brunet
- * Date: 08 janvier 2018 (creation)
+ * Auteurs: couj0902-trum1304
+ * Date: 28 juin 2022 (derniere modification)
  * Description: Implementation des methodes des classes decrites dans
- *    canevas.h. Ce fichier fait partie de la distribution de Graphicus.
+ *    canevas.h.
 ********/
 
 #include "canevas.h"
@@ -14,7 +14,7 @@ Canevas::Canevas()
 	couches[0].setEtat(Active);
 	for(int i=1;i<MAX_COUCHES;i++)
 	{
-		couches[i].setEtat(Initialisee);
+		couches[i].Etat=Initialisee;
 	}
 	IndexCoucheActive=0;
 }
@@ -33,7 +33,7 @@ bool Canevas::reinitialiser()
 	couches[0].setEtat(Active);
 	for(int i=1;i<MAX_COUCHES;i++)
 	{
-		couches[i].setEtat(Initialisee);
+		couches[i].Etat=Initialisee;
 	}
 	IndexCoucheActive=0;
   return true;
@@ -46,14 +46,14 @@ bool Canevas::activerCouche(int index)
 	{
 		couches[0].setEtat(Active);
 		couches[IndexCoucheActive].setEtat(Inactive);
-		IndexCoucheActive=index;
+		IndexCoucheActive=0;
 		return false;
 	}
 	else if(index>=MAX_COUCHES)
 	{
 		couches[MAX_COUCHES-1].setEtat(Active);
 		couches[IndexCoucheActive].setEtat(Inactive);
-		IndexCoucheActive=index;
+		IndexCoucheActive=MAX_COUCHES-1;
 		return false;
 	}
 	else
